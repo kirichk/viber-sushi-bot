@@ -20,7 +20,7 @@ load_dotenv(dotenv_path)
 
 app = Flask(__name__)
 viber = Api(BotConfiguration(
-    name='SushiBot',
+    name='SushiPizzaBot',
     avatar='https://img.icons8.com/metro/452/sushi.png',
     auth_token=os.getenv("TOKEN")
 ))
@@ -43,7 +43,7 @@ def incoming():
     # Defining type of the request and replying to it
     if isinstance(viber_request, ViberMessageRequest):
         # Passing any message from user to message handler in handlers.py
-        user_message_handler(viber, viber_request, ViberMessageRequest)
+        user_message_handler(viber, viber_request)
     elif isinstance(viber_request, ViberSubscribedRequest):
         viber.send_messages(viber_request.user.id, [
             TextMessage(text="Спасибо за подписку!")
