@@ -1,7 +1,8 @@
 """Main file that launches Flask server."""
 import os
 import logging
-import keyboards
+import utils.keyboards as kb
+from dotenv import load_dotenv
 from flask import Flask, request, Response
 from viberbot import Api
 from viberbot.api.bot_configuration import BotConfiguration
@@ -13,12 +14,15 @@ from viberbot.api.viber_requests import (ViberFailedRequest,
 from handlers import user_message_handler
 
 
+# Loading Environment variables
+dotenv_path = os.path.join(os.path.dirname(__file__), 'utils/.env')
+load_dotenv(dotenv_path)
+
 app = Flask(__name__)
 viber = Api(BotConfiguration(
     name='SushiBot',
     avatar='https://img.icons8.com/metro/452/sushi.png',
-    # auth_token=os.getenv("TOKEN")
-    auth_token='4c82beadd5000d6f-9c279d60da57302f-7f837b53210f082f'
+    auth_token=os.getenv("TOKEN")
 ))
 
 logger = logging.getLogger()
@@ -49,7 +53,7 @@ def incoming():
                     .format(viber_request))
     elif isinstance(viber_request, ViberConversationStartedRequest):
         # First touch, sending to user keyboard with phone sharing button
-        keyboard = keyboards.SHARE_PHONE_KEYBOARD
+        keyboard = kb.SHARE_PHONE_KEYBOARD
         viber.send_messages(viber_request.user.id, [
             TextMessage(
                 text="Здравствуйте! Чтобы оформить заказ, нажмите Поделиться "
