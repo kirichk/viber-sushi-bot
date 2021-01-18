@@ -1,4 +1,4 @@
-# VIBER SUSHI BOT#
+# VIBER SUSHI BOT
 
 ## Tasks completed:
 1. При запуске бота отображается приветствие
