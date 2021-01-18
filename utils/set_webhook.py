@@ -8,11 +8,13 @@ from dotenv import load_dotenv
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
+URL = os.getenv('URL')
+
 # Setting up webhook parameters
 auth_token = os.getenv("TOKEN")
 hook = 'https://chatapi.viber.com/pa/set_webhook'
 headers = {'X-Viber-Auth-Token': auth_token}
-body = dict(url='https://viber-sushi-bot.herokuapp.com/',
+body = dict(url=URL,
             event_types=['unsubscribed',
                          'conversation_started',
                          'message',
