@@ -12,7 +12,7 @@ load_dotenv(dotenv_path)
 auth_token = os.getenv("TOKEN")
 hook = 'https://chatapi.viber.com/pa/set_webhook'
 headers = {'X-Viber-Auth-Token': auth_token}
-body = dict(url='https://0722cd0d4d82.ngrok.io',
+body = dict(url='https://viber-sushi-bot.herokuapp.com/',
             event_types=['unsubscribed',
                          'conversation_started',
                          'message',

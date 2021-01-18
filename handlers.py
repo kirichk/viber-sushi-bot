@@ -8,6 +8,7 @@ import json
 import logging
 import utils.resources.keyboards_content as kb
 import utils.resources.rich_media_content as rm
+from dotenv import load_dotenv
 from viberbot.api.messages.text_message import TextMessage
 from viberbot.api.messages.contact_message import ContactMessage
 from viberbot.api.messages.location_message import LocationMessage
@@ -16,6 +17,9 @@ from utils.tools import get_address
 
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
+
+dotenv_path = os.path.join(os.path.dirname(__file__), 'utils/.env')
+load_dotenv(dotenv_path)
 
 ADMIN = os.getenv("ADMIN")  # Person's ID who will receive all orders
 
