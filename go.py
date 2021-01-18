@@ -1,7 +1,7 @@
 """Main file that launches Flask server."""
 import os
 import logging
-import utils.keyboards as kb
+import utils.resources.keyboards_content as kb
 from dotenv import load_dotenv
 from flask import Flask, request, Response
 from viberbot import Api

@@ -10,3 +10,50 @@ def get_address(location: Location) -> str:
     coordinates_transcriptor = partial(geolocator.reverse, language="ru")
     lat, lon = location.latitude, location.longitude
     return str(coordinates_transcriptor(f"{lat}, {lon}"))
+
+
+def rich_message_consctructor(items: list) -> dict:
+    """Pasting infromation from list of items to rich message template."""
+    buttons = []
+    for item in items:
+        buttons.append(
+            {
+               "Columns": 6,
+               "Rows": 4,
+               "ActionBody": "set_photo",
+               "Image": item[1]
+            }
+        )
+        buttons.append(
+            {
+               "Columns": 6,
+               "Rows": 2,
+               "Text": f"<font color=#323232><b>{item[0]}</b></font>"
+                       f"<font color=#777777><br>{item[2]} </font><br>"
+                       f"<font color=#6fc133><b>{item[3]}</b></font>",
+               "ActionBody": "info",
+               "TextSize": "medium",
+               "TextVAlign": "middle",
+               "TextHAlign": "left"
+            }
+        )
+        buttons.append(
+            {
+               "Columns": 6,
+               "Rows": 1,
+               "ActionType": "reply",
+               "ActionBody": f"order-{item[0]}",
+               "Text": "<font color=#ffffff>Купить</font>",
+               "TextSize": "large",
+               "TextVAlign": "middle",
+               "TextHAlign": "middle"
+            }
+        )
+    template = {
+          "Type": "rich_media",
+          "ButtonsGroupColumns": 6,
+          "ButtonsGroupRows": 7,
+          "BgColor": "#FFFFFF",
+          "Buttons": buttons
+       }
+    return template
