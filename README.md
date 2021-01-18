@@ -17,7 +17,7 @@
 1. Clone repository `git clone https://github.com/kirichk/viber-sushi-bot.git`
 2. Enter repository `cd viber-sushi-bot`
 3. Create virtual environment `python -m venv env`
-4. Activate virtual environment `source env/bin/activate
+4. Activate virtual environment `source env/bin/activate`
 5. Install packages `pip install -r requirements.txt`
 6. Enter utils folder `cd utils`
 7. Create .env file with creadentials such as *TOKEN* and *ADMIN*. 
