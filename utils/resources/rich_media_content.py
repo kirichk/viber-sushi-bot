@@ -1,5 +1,5 @@
 """Rich Media Content for Viber bot messages."""
-from .tools import rich_message_consctructor
+from ..tools import rich_message_consctructor
 
 
 INFO_SETS = [
