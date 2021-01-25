@@ -5,7 +5,7 @@ import json
 from dotenv import load_dotenv
 
 # Loading Environment variables
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+dotenv_path = os.path.join(__location__, '.env')
 load_dotenv(dotenv_path)
 
 URL = os.getenv('URL')

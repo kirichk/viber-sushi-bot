@@ -18,15 +18,15 @@ def rich_message_consctructor(items: list) -> dict:
     for item in items:
         buttons.append(
             {
-               "Columns": 6,
-               "Rows": 4,
+               "Columns": 5,
+               "Rows": 3,
                "ActionBody": "set_photo",
                "Image": item[1]
             }
         )
         buttons.append(
             {
-               "Columns": 6,
+               "Columns": 5,
                "Rows": 2,
                "Text": f"<font color=#323232><b>{item[0]}</b></font>"
                        f"<font color=#777777><br>{item[2]} </font><br>"
@@ -39,7 +39,7 @@ def rich_message_consctructor(items: list) -> dict:
         )
         buttons.append(
             {
-               "Columns": 6,
+               "Columns": 5,
                "Rows": 1,
                "ActionType": "reply",
                "ActionBody": f"order-{item[0]}",
@@ -51,8 +51,8 @@ def rich_message_consctructor(items: list) -> dict:
         )
     template = {
           "Type": "rich_media",
-          "ButtonsGroupColumns": 6,
-          "ButtonsGroupRows": 7,
+          "ButtonsGroupColumns": 5,
+          "ButtonsGroupRows": 6,
           "BgColor": "#FFFFFF",
           "Buttons": buttons
        }

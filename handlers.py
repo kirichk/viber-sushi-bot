@@ -18,7 +18,7 @@ from utils.tools import get_address
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
-dotenv_path = os.path.join(os.path.dirname(__file__), 'utils/.env')
+dotenv_path = os.path.join(__location__, 'utils/.env')
 load_dotenv(dotenv_path)
 
 ADMIN = os.getenv("ADMIN")  # Person's ID who will receive all orders
