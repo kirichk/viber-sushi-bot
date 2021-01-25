@@ -14,13 +14,12 @@ from viberbot.api.messages.location_message import LocationMessage
 from viberbot.api.messages.rich_media_message import RichMediaMessage
 from utils.tools import get_address, dotenv_definer
 
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
 
 dotenv_definer()
-
 ADMIN = os.getenv("ADMIN")  # Person's ID who will receive all orders
 
+logger = logging.getLogger()
+logger.setLevel(os.getenv("LOG_LEVEL"))
 
 def user_message_handler(viber, viber_request):
     """Receiving a message from user and sending replies."""

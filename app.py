@@ -25,7 +25,7 @@ viber = Api(BotConfiguration(
 ))
 
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+logger.setLevel(os.getenv("LOG_LEVEL"))
 
 
 @app.route('/', methods=['POST'])
