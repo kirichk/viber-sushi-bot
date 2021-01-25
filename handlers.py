@@ -118,7 +118,7 @@ def user_message_handler(viber, viber_request):
             else:
                 reply_text = 'Воспользуйтесь клавиатурой с внопками для '\
                              'управления ботом.'
-                if tracking_data['phone'] is not None:
+                if 'phone' in tracking_data:
                     reply_keyboard = kb.MENU_KEYBOARD
                 else:
                     reply_keyboard = kb.SHARE_PHONE_KEYBOARD
