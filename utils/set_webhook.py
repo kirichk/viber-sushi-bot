@@ -2,11 +2,10 @@
 import os
 import requests
 import json
-from dotenv import load_dotenv
+from tools import dotenv_definer
 
 # Loading Environment variables
-dotenv_path = os.path.join(__location__, '.env')
-load_dotenv(dotenv_path)
+dotenv_definer()
 
 URL = os.getenv('URL')
 

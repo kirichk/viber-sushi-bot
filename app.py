@@ -2,7 +2,6 @@
 import os
 import logging
 import utils.resources.keyboards_content as kb
-from dotenv import load_dotenv
 from flask import Flask, request, Response
 from viberbot import Api
 from viberbot.api.bot_configuration import BotConfiguration
@@ -12,11 +11,11 @@ from viberbot.api.viber_requests import (ViberFailedRequest,
                                          ViberMessageRequest,
                                          ViberSubscribedRequest)
 from handlers import user_message_handler
+from utils.tools import dotenv_definer
 
 
 # Loading Environment variables
-dotenv_path = os.path.join(os.path.dirname(__file__), 'utils/.env')
-load_dotenv(dotenv_path)
+dotenv_definer()
 
 app = Flask(__name__)
 viber = Api(BotConfiguration(

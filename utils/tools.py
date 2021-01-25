@@ -1,7 +1,12 @@
 """Additional functions for Viber bot."""
 from functools import partial
+from dotenv import load_dotenv
 from geopy.geocoders import Nominatim
 from viberbot.api.messages.data_types.location import Location
+
+
+def dotenv_definer():
+    load_dotenv('.env')
 
 
 def get_address(location: Location) -> str:
