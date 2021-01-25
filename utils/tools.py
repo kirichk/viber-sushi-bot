@@ -25,7 +25,8 @@ def rich_message_consctructor(items: list) -> dict:
             {
                "Columns": 5,
                "Rows": 3,
-               "ActionBody": "set_photo",
+               "ActionType": "reply",
+               "ActionBody": f"order-{item[0]}",
                "Image": item[1]
             }
         )
@@ -36,7 +37,8 @@ def rich_message_consctructor(items: list) -> dict:
                "Text": f"<font color=#323232><b>{item[0]}</b></font>"
                        f"<font color=#777777><br>{item[2]} </font><br>"
                        f"<font color=#6fc133><b>{item[3]}</b></font>",
-               "ActionBody": "info",
+               "ActionType": "reply",
+               "ActionBody": f"order-{item[0]}",
                "TextSize": "medium",
                "TextVAlign": "middle",
                "TextHAlign": "left"
