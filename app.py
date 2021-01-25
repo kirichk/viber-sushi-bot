@@ -27,10 +27,8 @@ viber = Api(BotConfiguration(
 logger = logging.getLogger()
 logger.setLevel(os.getenv("LOG_LEVEL"))
 
-
-@app.route('/', methods=['POST'])
-def incoming():
-    """Catching all requests to bot and defining the request type."""
+@app.before_request
+def viber_signature_verifier():
     # Verifying connection
     if not viber.verify_signature(
                         request.get_data(),
@@ -39,6 +37,9 @@ def incoming():
     # Grabbing data from request
     viber_request = viber.parse_request(request.get_data())
 
+@app.route('/', methods=['POST'])
+def incoming():
+    """Catching all requests to bot and defining the request type."""
     # Defining type of the request and replying to it
     if isinstance(viber_request, ViberMessageRequest):
         # Passing any message from user to message handler in handlers.py
