@@ -29,7 +29,7 @@ def rich_message_consctructor(items: list) -> dict:
                "ActionBody": f"order-{item[0]}",
                "Image": item[1],
                "Text": item[0],
-               "TextOpacity": 100,
+               "TextOpacity": 0,
             }
         )
         buttons.append(
