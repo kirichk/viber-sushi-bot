@@ -28,6 +28,7 @@ def rich_message_consctructor(items: list) -> dict:
                "ActionType": "reply",
                "ActionBody": f"order-{item[0]}",
                "Image": item[1]
+               "Text": item[0]
             }
         )
         buttons.append(
