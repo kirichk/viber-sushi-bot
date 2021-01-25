@@ -27,7 +27,7 @@ def rich_message_consctructor(items: list) -> dict:
                "Rows": 3,
                "ActionType": "reply",
                "ActionBody": f"order-{item[0]}",
-               "Image": item[1]
+               "Image": item[1],
                "Text": item[0]
             }
         )
