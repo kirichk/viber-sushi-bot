@@ -35,10 +35,11 @@ def viber_signature_verifier():
                         request.headers.get('X-Viber-Content-Signature')):
         return Response(status=403)
     # Grabbing data from request
-    g.viber_request = viber.parse_request(request.get_data())
+    viber_request = viber.parse_request(request.get_data())
+    return viber_request
 
 @app.route('/', methods=['POST'])
-def incoming():
+def incoming(viber_request):
     """Catching all requests to bot and defining the request type."""
     viber_request = g.viber_request
     # Defining type of the request and replying to it
