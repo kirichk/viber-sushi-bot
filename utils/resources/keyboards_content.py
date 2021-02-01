@@ -1,11 +1,36 @@
 """Keyboards for Viber bot messages."""
+from ..tools import keyboard_consctructor
 
 
 MENU_NAMES = [
+    ('sets_rolls', 'Сеты и Роллы'),
+    ('guncans_sushi', 'Гунканы и Суши'),
+    ('pizza_snacks', 'Пицца и Закуски'),
+    ('other', 'Ещё')
+]
+
+SETS_ROLLS_MENU = [
     ('sets', 'Сеты'),
-    ('rolls', 'Роллы'),
+    ('rolls', 'Роллы')
+]
+
+GUNCANS_SUSHI_MENU = [
+    ('guncans', 'Гунканы'),
+    ('sushi', 'Суши')
+]
+
+PIZZA_SNACKS_MENU = [
     ('pizza', 'Пицца'),
-    ('snacks', 'Закуски')
+    ('combo', 'Комбо'),
+    ('nuggets_wings', 'Наггетсы и Крылышки'),
+    ('mussils', 'Мидии')
+]
+
+OTHER_MENU = [
+    ('sauces', 'Соусы'),
+    ('drinks', 'Напитки'),
+    ('offers', 'Акции'),
+    ('delivery', 'Доставка')
 ]
 
 SHARE_PHONE_KEYBOARD = {
@@ -42,22 +67,6 @@ SHARE_LOCATION_KEYBOARD = {
             "Text": "Отправить локацию"
         }
     ]
-}
-
-MENU_KEYBOARD = {
-    "DefaultHeight": False,
-    "BgColor": "#FFFFFF",
-    "Type": "keyboard",
-    "Buttons": [{
-            "Columns": 3,
-            "Rows": 1,
-            "BgColor": "#e6f5ff",
-            "BgLoop": True,
-            "ActionType": "reply",
-            "ActionBody": item[0],
-            "ReplyType": "message",
-            "Text": item[1]
-        } for item in MENU_NAMES]
 }
 
 ORDER_COMFIRMATION_KEYBOARD = {
@@ -133,3 +142,10 @@ FINAL_COMFIRMATION_WITHOUT_COMMENT_KEYBOARD = {
         }
     ]
 }
+
+
+MENU_KEYBOARD = keyboard_consctructor(MENU_NAMES)
+SETS_ROLLS_KEYBOARD = keyboard_consctructor(SETS_ROLLS_MENU)
+GUNCANS_SUSHI_KEYBOARD = keyboard_consctructor(GUNCANS_SUSHI_MENU)
+PIZZA_SNACKS_KEYBOARD = keyboard_consctructor(PIZZA_SNACKS_MENU)
+OTHER_KEYBOARD = keyboard_consctructor(OTHER_MENU)
