@@ -19,20 +19,9 @@ def get_address(location: Location) -> str:
     return str(coordinates_transcriptor(f"{lat}, {lon}"))
 
 
-def load_images_from_folder(folder: str) -> list:
-    images = []
-    for filename in os.listdir(folder):
-        path = 'file:/' + os.path.abspath(os.path.join(folder, filename))
-        formatted_filename = folder.split('/')[3] + filename
-        images.append([path, MEDIA_MAP[formatted_filename]])
-    return images
-
-
 def rich_message_consctructor(folder: str) -> dict:
     """Pasting infromation from list of items to rich message template."""
-    items = load_images_from_folder(folder)
-    buttons = []
-    for item in items:
+    for item in MEDIA_MAP[folder]:
         buttons.append(
             {
                 "Columns": 5,

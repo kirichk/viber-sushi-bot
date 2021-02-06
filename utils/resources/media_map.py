@@ -1,7 +1,9 @@
 MEDIA_MAP = {
-    'combo1.jpg': 'Комбо 1',
-    'combo2.jpg': 'Комбо 2',
-    'combo3.jpg': 'Комбо 3',
-    'combo4.jpg': 'Комбо 4',
-    'combo5.jpg': 'Комбо 5',
+    'combo': [
+        ('https://i.imgur.com/bcqkviS.jpg', 'Комбо 1'),
+        ('https://i.imgur.com/wNVvfa4.jpg', 'Комбо 2'),
+        ('https://i.imgur.com/n1zVjo1.jpg', 'Комбо 3'),
+        ('https://i.imgur.com/ZNG5zFW.jpg', 'Комбо 4'),
+        ('https://i.imgur.com/AxY04Nv.jpg', 'Комбо 5')
+    ]
 }
