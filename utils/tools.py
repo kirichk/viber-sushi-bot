@@ -1,5 +1,4 @@
 """Additional functions for Viber bot."""
-import cv2
 import os
 from functools import partial
 from dotenv import load_dotenv
