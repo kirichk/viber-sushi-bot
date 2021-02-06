@@ -19,9 +19,10 @@ def get_address(location: Location) -> str:
     return str(coordinates_transcriptor(f"{lat}, {lon}"))
 
 
-def rich_message_consctructor(folder: str) -> dict:
+def rich_message_consctructor(category: str) -> dict:
     """Pasting infromation from list of items to rich message template."""
-    for item in MEDIA_MAP[folder]:
+    buttons = []
+    for item in MEDIA_MAP[category]:
         buttons.append(
             {
                 "Columns": 5,
