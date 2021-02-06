@@ -22,7 +22,7 @@ def get_address(location: Location) -> str:
 def load_images_from_folder(folder: str) -> list:
     images = []
     for filename in os.listdir(folder):
-        path = 'file://' + os.path.abspath(os.path.join(folder, filename))
+        path = 'file:/' + os.path.abspath(os.path.join(folder, filename))
         formatted_filename = folder.split('/')[3] + filename
         images.append([path, MEDIA_MAP[formatted_filename]])
     return images
