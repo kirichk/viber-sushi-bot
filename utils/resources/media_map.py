@@ -99,7 +99,7 @@ MEDIA_MAP = {
         ('https://i.imgur.com/baqGcME.jpg', 'Сет Лососевый бум'),
         ('https://i.imgur.com/XRa8veQ.jpg', 'Сет Филадельфия Lux'),
         ('https://i.imgur.com/0J22tOR.jpg', 'Сет Кунсей'),
-        # ('https://i.imgur.com/H4XT4LF.jpg', 'Сет Mix вкусов'),
+        ('https://i.imgur.com/H4XT4LF.jpg', 'Сет Mix вкусов'),
         # ('https://i.imgur.com/Uu00g1r.jpg', 'Сет Гурман'),
         # ('https://i.imgur.com/Z5g1ke5.jpg', 'Сет Королевский'),
         # ('https://i.imgur.com/T6cNUz9.jpg', 'Сет Для компании'),
