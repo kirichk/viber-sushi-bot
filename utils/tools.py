@@ -4,7 +4,7 @@ from functools import partial
 from dotenv import load_dotenv
 from geopy.geocoders import Nominatim
 from viberbot.api.messages.data_types.location import Location
-from .resources.media_map import MEDIA_MAP as MM
+from .resources.media_map import MEDIA_MAP
 
 
 def dotenv_definer():
@@ -22,9 +22,9 @@ def get_address(location: Location) -> str:
 def load_images_from_folder(folder: str) -> list:
     images = []
     for filename in os.listdir(folder):
-        path = 'file:///' + os.path.abspath(os.path.join(folder, filename))
+        path = 'file://' + os.path.abspath(os.path.join(folder, filename))
         formatted_filename = folder.split('/')[3] + filename
-        images.append([path, MM[formatted_filename]])
+        images.append([path, MEDIA_MAP[formatted_filename]])
     return images
 
 
