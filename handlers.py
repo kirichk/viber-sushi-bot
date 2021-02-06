@@ -6,12 +6,12 @@ Contains all bot answers for ViberMessageRequest
 import os
 import json
 import logging
-import utils.resources.keyboards_content as kb
-import utils.resources.rich_media_content as rm
 from viberbot.api.messages.text_message import TextMessage
 from viberbot.api.messages.contact_message import ContactMessage
 from viberbot.api.messages.location_message import LocationMessage
 from viberbot.api.messages.rich_media_message import RichMediaMessage
+import utils.resources.keyboards_content as kb
+import utils.resources.rich_media_content as rm
 from utils.tools import get_address, dotenv_definer
 
 
@@ -20,6 +20,7 @@ ADMIN = os.getenv("ADMIN")  # Person's ID who will receive all orders
 
 logger = logging.getLogger()
 logger.setLevel(os.getenv("LOG_LEVEL"))
+
 
 def user_message_handler(viber, viber_request):
     """Receiving a message from user and sending replies."""
