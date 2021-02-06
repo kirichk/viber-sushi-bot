@@ -74,4 +74,11 @@ INFO_SNACKS = [
 RICH_MEDIA_SETS = rich_message_consctructor(INFO_SETS)
 RICH_MEDIA_ROLLS = rich_message_consctructor(INFO_ROLLS)
 RICH_MEDIA_PIZZA = rich_message_consctructor(INFO_PIZZA)
-RICH_MEDIA_SNACKS = rich_message_consctructor(INFO_SNACKS)
+
+RICH_MEDIA_GUNCANS = rich_message_consctructor([])
+RICH_MEDIA_SUSHI = rich_message_consctructor([])
+RICH_MEDIA_COMBO = rich_message_consctructor([])
+RICH_MEDIA_NUGGETS_WINGS = rich_message_consctructor([])
+RICH_MEDIA_MUSSILS = rich_message_consctructor([])
+RICH_MEDIA_SAUCES = rich_message_consctructor([])
+RICH_MEDIA_DRINKS = rich_message_consctructor([])
