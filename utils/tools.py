@@ -26,9 +26,9 @@ def rich_message_consctructor(category: str) -> dict:
         buttons.append(
             {
                 "Columns": 5,
-                "Rows": 5,
+                "Rows": 7,
                 "ActionType": "reply",
-                "ActionBody": f"order-{item[0]}",
+                "ActionBody": f"order-{item[1]}",
                 "Image": item[0],
                 "Text": item[1],
                 "TextOpacity": 0,
@@ -37,7 +37,7 @@ def rich_message_consctructor(category: str) -> dict:
     template = {
         "Type": "rich_media",
         "ButtonsGroupColumns": 5,
-        "ButtonsGroupRows": 5,
+        "ButtonsGroupRows": 7,
         "BgColor": "#FFFFFF",
         "Buttons": buttons
     }
