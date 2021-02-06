@@ -21,27 +21,31 @@ def get_address(location: Location) -> str:
 
 def rich_message_consctructor(category: str) -> dict:
     """Pasting infromation from list of items to rich message template."""
-    buttons = []
+    templates = []
     for item in MEDIA_MAP[category]:
-        buttons.append(
+        buttons = []
+        for item in vowel:
+            buttons.append(
+                {
+                    "Columns": 6,
+                    "Rows": 6,
+                    "ActionType": "reply",
+                    "ActionBody": f"order-{item[1]}",
+                    "Image": item[0],
+                    "Text": item[1],
+                    "TextOpacity": 0,
+                }
+            )
+        templates.append(
             {
-                "Columns": 6,
-                "Rows": 6,
-                "ActionType": "reply",
-                "ActionBody": f"order-{item[1]}",
-                "Image": item[0],
-                "Text": item[1],
-                "TextOpacity": 0,
+                "Type": "rich_media",
+                "ButtonsGroupColumns": 6,
+                "ButtonsGroupRows": 6,
+                "BgColor": "#FFFFFF",
+                "Buttons": buttons
             }
-        )
-    template = {
-        "Type": "rich_media",
-        "ButtonsGroupColumns": 6,
-        "ButtonsGroupRows": 6,
-        "BgColor": "#FFFFFF",
-        "Buttons": buttons
-    }
-    return template
+        ) 
+    return templates
 
 
 def keyboard_consctructor(items: list) -> dict:

@@ -76,40 +76,40 @@ def user_message_handler(viber, viber_request):
 
         elif text == 'sets':
             reply_alt_text = 'Выбор сетов'
-            reply_rich_media = rm.RICH_MEDIA_SETS
+            reply_rich_media = rm.RICH_MEDIA_SETS[0]
         elif text == 'rolls':
             reply_alt_text = 'Выбор роллов'
-            reply_rich_media = rm.RICH_MEDIA_ROLLS
+            reply_rich_media = rm.RICH_MEDIA_ROLLS[0]
         elif text == 'guncans':
             reply_alt_text = 'Выбор гунканов'
-            reply_rich_media = rm.RICH_MEDIA_GUNCANS
+            reply_rich_media = rm.RICH_MEDIA_GUNCANS[0]
         elif text == 'sushi':
             reply_alt_text = 'Выбор суши'
-            reply_rich_media = rm.RICH_MEDIA_SUSHI
+            reply_rich_media = rm.RICH_MEDIA_SUSHI[0]
         elif text == 'pizza':
             reply_alt_text = 'Выбор пиццы'
-            reply_rich_media = rm.RICH_MEDIA_PIZZA
+            reply_rich_media = rm.RICH_MEDIA_PIZZA[0]
         elif text == 'combo':
             reply_alt_text = 'Выбор комбо'
-            reply_rich_media = rm.RICH_MEDIA_COMBO
+            reply_rich_media = rm.RICH_MEDIA_COMBO[0]
         elif text == 'nuggets_wings':
             reply_alt_text = 'Выбор наггетсов и крылишек'
-            reply_rich_media = rm.RICH_MEDIA_NUGGETS_WINGS
+            reply_rich_media = rm.RICH_MEDIA_NUGGETS_WINGS[0]
         elif text == 'mussils':
             reply_alt_text = 'Выбор мидий'
-            reply_rich_media = rm.RICH_MEDIA_MUSSILS
+            reply_rich_media = rm.RICH_MEDIA_MUSSILS[0]
         elif text == 'sauces':
             reply_alt_text = 'Выбор соусов'
-            reply_rich_media = rm.RICH_MEDIA_SAUCES
+            reply_rich_media = rm.RICH_MEDIA_SAUCES[0]
         elif text == 'drinks':
             reply_alt_text = 'Выбор напитков'
-            reply_rich_media = rm.RICH_MEDIA_DRINKS
+            reply_rich_media = rm.RICH_MEDIA_DRINKS[0]
         elif text == 'offers':
             reply_alt_text = 'Меню недоступно'
-            reply_rich_media = rm.RICH_MEDIA_SETS
+            reply_rich_media = rm.RICH_MEDIA_SETS[0]
         elif text == 'delivery':
             reply_alt_text = 'Меню недоступно'
-            reply_rich_media = rm.RICH_MEDIA_SETS
+            reply_rich_media = rm.RICH_MEDIA_SETS[0]
 
         ##########################################################
 
