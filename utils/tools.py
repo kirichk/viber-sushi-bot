@@ -4,7 +4,7 @@ from functools import partial
 from dotenv import load_dotenv
 from geopy.geocoders import Nominatim
 from viberbot.api.messages.data_types.location import Location
-from resources.media_map import MEDIA_MAP as MM
+from .resources.media_map import MEDIA_MAP as MM
 
 
 def dotenv_definer():
