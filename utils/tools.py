@@ -25,8 +25,8 @@ def rich_message_consctructor(category: str) -> dict:
     for item in MEDIA_MAP[category]:
         buttons.append(
             {
-                "Columns": 5,
-                "Rows": 7,
+                "Columns": 6,
+                "Rows": 6,
                 "ActionType": "reply",
                 "ActionBody": f"order-{item[1]}",
                 "Image": item[0],
@@ -36,8 +36,8 @@ def rich_message_consctructor(category: str) -> dict:
         )
     template = {
         "Type": "rich_media",
-        "ButtonsGroupColumns": 5,
-        "ButtonsGroupRows": 7,
+        "ButtonsGroupColumns": 6,
+        "ButtonsGroupRows": 6,
         "BgColor": "#FFFFFF",
         "Buttons": buttons
     }
