@@ -22,7 +22,7 @@ def get_address(location: Location) -> str:
 def rich_message_consctructor(category: str) -> dict:
     """Pasting infromation from list of items to rich message template."""
     templates = []
-    for item in MEDIA_MAP[category]:
+    for vowel in MEDIA_MAP[category]:
         buttons = []
         for item in vowel:
             buttons.append(
@@ -44,7 +44,7 @@ def rich_message_consctructor(category: str) -> dict:
                 "BgColor": "#FFFFFF",
                 "Buttons": buttons
             }
-        ) 
+        )
     return templates
 
 
