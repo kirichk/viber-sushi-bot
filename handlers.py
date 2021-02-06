@@ -143,8 +143,9 @@ def user_message_handler(viber, viber_request):
             mesage_to_admin = f"Новый заказ!\nИмя: {tracking_data['name']}\n"\
                               f"Номер: {tracking_data['phone']}\n"\
                               f"Заказ: {', '.join(tracking_data['order'])}\n"\
-                              f"Адрес: {tracking_data['location']}\n"\
-                              f"Комментарий: {tracking_data['comment']}\n"
+                              f"Адрес: {tracking_data['location']}\n"
+            if 'comment' in tracking_data:
+                mesage_to_admin += f"Комментарий: {tracking_data['comment']}\n"
             viber.send_messages(ADMIN, TextMessage(text=mesage_to_admin))
             tracking_data['order'] = []
             tracking_data['location'] = ''
