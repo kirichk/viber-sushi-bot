@@ -1,8 +1,11 @@
 """Additional functions for Viber bot."""
+import cv2
+import os
 from functools import partial
 from dotenv import load_dotenv
 from geopy.geocoders import Nominatim
 from viberbot.api.messages.data_types.location import Location
+from resources.media_map import MEDIA_MAP as MM
 
 
 def dotenv_definer():
@@ -17,54 +20,38 @@ def get_address(location: Location) -> str:
     return str(coordinates_transcriptor(f"{lat}, {lon}"))
 
 
-def rich_message_consctructor(items: list) -> dict:
+def load_images_from_folder(folder: str) -> list:
+    images = []
+    for filename in os.listdir(folder):
+        path = 'file:///' + os.path.abspath(os.path.join(folder, filename))
+        formatted_filename = folder.split('/')[2] + filename
+        images.append([path, MM[formatted_filename]])
+    return images
+
+
+def rich_message_consctructor(folder: str) -> dict:
     """Pasting infromation from list of items to rich message template."""
+    items = load_images_from_folder(folder)
     buttons = []
     for item in items:
         buttons.append(
             {
-               "Columns": 5,
-               "Rows": 3,
-               "ActionType": "reply",
-               "ActionBody": f"order-{item[0]}",
-               "Image": item[1],
-               "Text": item[0],
-               "TextOpacity": 0,
-            }
-        )
-        buttons.append(
-            {
-               "Columns": 5,
-               "Rows": 2,
-               "Text": f"<font color=#323232><b>{item[0]}</b></font>"
-                       f"<font color=#777777><br>{item[2]} </font><br>"
-                       f"<font color=#6fc133><b>{item[3]}</b></font>",
-               "ActionType": "reply",
-               "ActionBody": f"order-{item[0]}",
-               "TextSize": "medium",
-               "TextVAlign": "middle",
-               "TextHAlign": "left"
-            }
-        )
-        buttons.append(
-            {
-               "Columns": 5,
-               "Rows": 1,
-               "ActionType": "reply",
-               "ActionBody": f"order-{item[0]}",
-               "Text": "<font color=#ffffff>Купить</font>",
-               "TextSize": "large",
-               "TextVAlign": "middle",
-               "TextHAlign": "middle"
+                "Columns": 5,
+                "Rows": 5,
+                "ActionType": "reply",
+                "ActionBody": f"order-{item[0]}",
+                "Image": item[0],
+                "Text": item[1],
+                "TextOpacity": 0,
             }
         )
     template = {
-          "Type": "rich_media",
-          "ButtonsGroupColumns": 5,
-          "ButtonsGroupRows": 6,
-          "BgColor": "#FFFFFF",
-          "Buttons": buttons
-       }
+        "Type": "rich_media",
+        "ButtonsGroupColumns": 5,
+        "ButtonsGroupRows": 5,
+        "BgColor": "#FFFFFF",
+        "Buttons": buttons
+    }
     return template
 
 
@@ -83,6 +70,10 @@ def keyboard_consctructor(items: list) -> dict:
                 "ActionBody": item[0],
                 "ReplyType": "message",
                 "Text": item[1]
-            } for item in items]
+        } for item in items]
     }
     return keyboard
+
+
+if __name__ == '__main__':
+    print(load_images_from_folder('resources/images/combo'))
