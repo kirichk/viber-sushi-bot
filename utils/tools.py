@@ -23,7 +23,7 @@ def load_images_from_folder(folder: str) -> list:
     images = []
     for filename in os.listdir(folder):
         path = 'file:///' + os.path.abspath(os.path.join(folder, filename))
-        formatted_filename = folder.split('/')[2] + filename
+        formatted_filename = folder.split('/')[3] + filename
         images.append([path, MM[formatted_filename]])
     return images
 
