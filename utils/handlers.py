@@ -14,7 +14,7 @@ from .resources import keyboards_content as kb
 from .resources import rich_media_content as rm
 from .resources import texts as txt
 from .tools import get_address, dotenv_definer
-from .response_map import RESPONSE_MAP
+from .response_map import RICH_RESPONSE_MAP
 
 
 dotenv_definer()
