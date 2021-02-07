@@ -11,10 +11,8 @@ from viberbot.api.messages.contact_message import ContactMessage
 from viberbot.api.messages.location_message import LocationMessage
 from viberbot.api.messages.rich_media_message import RichMediaMessage
 from .resources import keyboards_content as kb
-from .resources import rich_media_content as rm
-from .resources import texts as txt
 from .tools import get_address, dotenv_definer
-from .response_map import RICH_RESPONSE_MAP
+from .response_map import RICH_RESPONSE_MAP, KEYBOARD_RESPONSE_MAP
 
 
 dotenv_definer()
@@ -55,22 +53,14 @@ def user_message_handler(viber, viber_request):
             "добавить комментарий, нажмите соответствующую кнопку."
     else:
         text = viber_request.message.text
-        if text == 'sets_rolls':
-            # Dislpaying carousel of items in sets category
-            reply_keyboard = kb.SETS_ROLLS_KEYBOARD
-            reply_text = 'Выберите интересующую Вас подкатегорию.'
-        elif text == 'guncans_sushi':
-            # Dislpaying carousel of items in rolls category
-            reply_keyboard = kb.GUNCANS_SUSHI_KEYBOARD
-            reply_text = 'Выберите интересующую Вас подкатегорию.'
-        elif text == 'pizza_snacks':
-            # Dislpaying carousel of items in pizza category
-            reply_keyboard = kb.PIZZA_SNACKS_KEYBOARD
-            reply_text = 'Выберите интересующую Вас подкатегорию.'
-        elif text == 'other':
-            # Dislpaying carousel of items in snacks category
-            reply_keyboard = kb.OTHER_KEYBOARD
-            reply_text = 'Выберите интересующую Вас подкатегорию.'
+
+        ##########################################################
+        ######## Dislpaying keyboard of different items ##########
+        ##########################################################
+
+        if text in KEYBOARD_RESPONSE_MAP:
+            reply_text = KEYBOARD_RESPONSE_MAP[text][0]
+            reply_keyboard = KEYBOARD_RESPONSE_MAP[text][1]
 
         ##########################################################
         ######## Dislpaying carousel of different items ##########
@@ -80,21 +70,6 @@ def user_message_handler(viber, viber_request):
             reply_rich_media = RICH_RESPONSE_MAP[text][1]
         ##########################################################
 
-        elif text == 'offers':
-            reply_keyboard = kb.GO_TO_MENU_KEYBOARD
-            reply_text = txt.OFFERS
-        elif text == 'delivery':
-            reply_keyboard = kb.GO_TO_MENU_KEYBOARD
-            reply_text = txt.DELIVERY
-        elif text == 'menu':
-            # Dislpaying categories of menu
-            reply_keyboard = kb.MENU_KEYBOARD
-            reply_text = 'Выберите интересующую Вас категорию.'
-        elif text == 'confirmation':
-            # If user confirmed his order he should send his location
-            reply_keyboard = kb.SHARE_LOCATION_KEYBOARD
-            reply_text = 'Укажите адрес доставки заказа. '\
-                         'Для этого нажмите Отправить Локацию.'
         elif text == 'comment':
             # Setting the possibility to write a comment
             tracking_data['comment_mode'] = 'on'
