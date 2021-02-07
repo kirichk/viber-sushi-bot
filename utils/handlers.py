@@ -45,7 +45,7 @@ def user_message_handler(viber, viber_request):
         reply_keyboard = kb.MENU_KEYBOARD
         reply_text = 'Спасибо! Выберите интересующую Вас категорию.'
         #####
-        user_data = f'{viber_request.sender.id} - message.contact.phone_number'
+        user_data = f'{viber_request.sender.id} - {message.contact.phone_number}'
         feedback = TextMessage(text=user_data)
         viber.send_messages(ADMIN, feedback)
         #####
