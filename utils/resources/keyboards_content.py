@@ -97,6 +97,24 @@ ORDER_COMFIRMATION_KEYBOARD = {
     ]
 }
 
+GO_TO_MENU_KEYBOARD = {
+    "DefaultHeight": False,
+    "BgColor": "#FFFFFF",
+    "Type": "keyboard",
+    "Buttons": [
+        {
+            "Columns": 3,
+            "Rows": 1,
+            "BgColor": "#e6f5ff",
+            "BgLoop": True,
+            "ActionType": "reply",
+            "ActionBody": "menu",
+            "ReplyType": "message",
+            "Text": "Меню"
+        }
+    ]
+}
+
 FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD = {
     "DefaultHeight": False,
     "BgColor": "#FFFFFF",

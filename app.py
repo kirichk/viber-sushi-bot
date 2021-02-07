@@ -10,7 +10,7 @@ from viberbot.api.viber_requests import (ViberFailedRequest,
                                          ViberConversationStartedRequest,
                                          ViberMessageRequest,
                                          ViberSubscribedRequest)
-from handlers import user_message_handler
+from utils.handlers import user_message_handler
 from utils.tools import dotenv_definer
 
 

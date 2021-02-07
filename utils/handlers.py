@@ -10,9 +10,9 @@ from viberbot.api.messages.text_message import TextMessage
 from viberbot.api.messages.contact_message import ContactMessage
 from viberbot.api.messages.location_message import LocationMessage
 from viberbot.api.messages.rich_media_message import RichMediaMessage
-import utils.resources.keyboards_content as kb
-import utils.resources.rich_media_content as rm
-from utils.tools import get_address, dotenv_definer
+import .resources.keyboards_content as kb
+import .resources.rich_media_content as rm
+from .tools import get_address, dotenv_definer
 
 
 dotenv_definer()
@@ -140,10 +140,12 @@ def user_message_handler(viber, viber_request):
         elif text == 'send_order':
             # Final step, sends all info to manager and resets tracking_data
             tracking_data['comment_mode'] = 'off'
-            mesage_to_admin = f"Новый заказ!\nИмя: {tracking_data['name']}\n"\
-                              f"Номер: {tracking_data['phone']}\n"\
-                              f"Заказ: {', '.join(tracking_data['order'])}\n"\
-                              f"Адрес: {tracking_data['location']}\n"
+            mesage_to_admin = f"Новый заказ!\n"
+            if tracking_data['name'] is not None:
+                mesage_to_admin += f"Имя: {tracking_data['name']}\n"
+            mesage_to_admin += f"Номер: {tracking_data['phone']}\n"\
+                               f"Заказ: {', '.join(tracking_data['order'])}\n"\
+                               f"Адрес: {tracking_data['location']}\n"
             if 'comment' in tracking_data:
                 mesage_to_admin += f"Комментарий: {tracking_data['comment']}\n"
             viber.send_messages(ADMIN, TextMessage(text=mesage_to_admin))
@@ -172,6 +174,7 @@ def user_message_handler(viber, viber_request):
 
     if reply_rich_media:
         reply = []
+        reply_text = 'Выберите желаемую позицию из перечня выше. Для возвращения в меню воспользуйтесь клавиатурой внизу.'
         for template in reply_rich_media:
             reply.append(
                 RichMediaMessage(rich_media=template,
@@ -179,6 +182,12 @@ def user_message_handler(viber, viber_request):
                                  tracking_data=tracking_data,
                                  min_api_version=7)
                 )
+            reply.append(
+                TextMessage(text=reply_text,
+                                     keyboard=kb.GO_TO_MENU_KEYBOARD,
+                                     tracking_data=tracking_data,
+                                     min_api_version=3)
+            )
     else:
         reply = [TextMessage(text=reply_text,
                              keyboard=reply_keyboard,
