@@ -88,7 +88,7 @@ def user_message_handler(viber, viber_request):
         elif text == 'send_order':
             # Final step, sends all info to manager and resets tracking_data
             tracking_data['comment_mode'] = 'off'
-            mesage_to_admin = f"Новый заказ!\n"
+            mesage_to_admin = "Новый заказ!\n"
             if tracking_data['name'] is not None:
                 mesage_to_admin += f"Имя: {tracking_data['name']}\n"
             mesage_to_admin += f"Номер: {tracking_data['phone']}\n"\
