@@ -10,9 +10,9 @@ from viberbot.api.messages.text_message import TextMessage
 from viberbot.api.messages.contact_message import ContactMessage
 from viberbot.api.messages.location_message import LocationMessage
 from viberbot.api.messages.rich_media_message import RichMediaMessage
-import .resources.keyboards_content as kb
-import .resources.rich_media_content as rm
-from .tools import get_address, dotenv_definer
+import resources.keyboards_content as kb
+import resources.rich_media_content as rm
+from tools import get_address, dotenv_definer
 
 
 dotenv_definer()
