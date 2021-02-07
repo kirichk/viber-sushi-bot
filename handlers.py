@@ -173,12 +173,12 @@ def user_message_handler(viber, viber_request):
     if reply_rich_media:
         reply = []
         for template in reply_rich_media:
-        reply.append(
-            RichMediaMessage(rich_media=template,
-                             alt_text=reply_alt_text,
-                             tracking_data=tracking_data,
-                             min_api_version=7)
-            )
+            reply.append(
+                RichMediaMessage(rich_media=template,
+                                 alt_text=reply_alt_text,
+                                 tracking_data=tracking_data,
+                                 min_api_version=7)
+                )
     else:
         reply = [TextMessage(text=reply_text,
                              keyboard=reply_keyboard,
