@@ -2,6 +2,7 @@
 import os
 import logging
 import utils.resources.keyboards_content as kb
+import utils.resources.texts as txt
 from flask import Flask, request, Response
 from viberbot import Api
 from viberbot.api.bot_configuration import BotConfiguration
@@ -57,8 +58,7 @@ def incoming():
         keyboard = kb.SHARE_PHONE_KEYBOARD
         viber.send_messages(viber_request.user.id, [
             TextMessage(
-                text="Здравствуйте! Чтобы оформить заказ, нажмите Поделиться "
-                "номером внизу.",
+                text=txt.GREETING,
                 keyboard=keyboard,
                 min_api_version=3)
             ]

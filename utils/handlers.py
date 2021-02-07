@@ -12,7 +12,9 @@ from viberbot.api.messages.location_message import LocationMessage
 from viberbot.api.messages.rich_media_message import RichMediaMessage
 from .resources import keyboards_content as kb
 from .resources import rich_media_content as rm
+from .resources import texts as txt
 from .tools import get_address, dotenv_definer
+from .response_map import RESPONSE_MAP
 
 
 dotenv_definer()
@@ -73,46 +75,17 @@ def user_message_handler(viber, viber_request):
         ##########################################################
         ######## Dislpaying carousel of different items ##########
         ##########################################################
-
-        elif text == 'sets':
-            reply_alt_text = 'Выбор сетов'
-            reply_rich_media = rm.RICH_MEDIA_SETS
-        elif text == 'rolls':
-            reply_alt_text = 'Выбор роллов'
-            reply_rich_media = rm.RICH_MEDIA_ROLLS
-        elif text == 'guncans':
-            reply_alt_text = 'Выбор гунканов'
-            reply_rich_media = rm.RICH_MEDIA_GUNCANS
-        elif text == 'sushi':
-            reply_alt_text = 'Выбор суши'
-            reply_rich_media = rm.RICH_MEDIA_SUSHI
-        elif text == 'pizza':
-            reply_alt_text = 'Выбор пиццы'
-            reply_rich_media = rm.RICH_MEDIA_PIZZA
-        elif text == 'combo':
-            reply_alt_text = 'Выбор комбо'
-            reply_rich_media = rm.RICH_MEDIA_COMBO
-        elif text == 'nuggets_wings':
-            reply_alt_text = 'Выбор наггетсов и крылишек'
-            reply_rich_media = rm.RICH_MEDIA_NUGGETS_WINGS
-        elif text == 'mussils':
-            reply_alt_text = 'Выбор мидий'
-            reply_rich_media = rm.RICH_MEDIA_MUSSILS
-        elif text == 'sauces':
-            reply_alt_text = 'Выбор соусов'
-            reply_rich_media = rm.RICH_MEDIA_SAUCES
-        elif text == 'drinks':
-            reply_alt_text = 'Выбор напитков'
-            reply_rich_media = rm.RICH_MEDIA_DRINKS
-        elif text == 'offers':
-            reply_alt_text = 'Меню недоступно'
-            reply_rich_media = rm.RICH_MEDIA_SETS
-        elif text == 'delivery':
-            reply_alt_text = 'Меню недоступно'
-            reply_rich_media = rm.RICH_MEDIA_SETS
-
+        elif text in RICH_RESPONSE_MAP:
+            reply_alt_text = RICH_RESPONSE_MAP[text][0]
+            reply_rich_media = RICH_RESPONSE_MAP[text][1]
         ##########################################################
 
+        elif text == 'offers':
+            reply_keyboard = kb.GO_TO_MENU_KEYBOARD
+            reply_text = txt.OFFERS
+        elif text == 'delivery':
+            reply_keyboard = kb.GO_TO_MENU_KEYBOARD
+            reply_text = txt.DELIVERY
         elif text == 'menu':
             # Dislpaying categories of menu
             reply_keyboard = kb.MENU_KEYBOARD
