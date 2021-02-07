@@ -103,7 +103,7 @@ GO_TO_MENU_KEYBOARD = {
     "Type": "keyboard",
     "Buttons": [
         {
-            "Columns": 3,
+            "Columns": 6,
             "Rows": 1,
             "BgColor": "#e6f5ff",
             "BgLoop": True,

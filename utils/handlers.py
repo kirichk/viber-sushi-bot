@@ -174,7 +174,8 @@ def user_message_handler(viber, viber_request):
 
     if reply_rich_media:
         reply = []
-        reply_text = 'Выберите желаемую позицию из перечня выше. Для возвращения в меню воспользуйтесь клавиатурой внизу.'
+        reply_text = 'Выберите желаемую позицию из перечня выше. Для '\
+                     'возвращения в меню воспользуйтесь клавиатурой внизу.'
         for template in reply_rich_media:
             reply.append(
                 RichMediaMessage(rich_media=template,
@@ -182,12 +183,12 @@ def user_message_handler(viber, viber_request):
                                  tracking_data=tracking_data,
                                  min_api_version=7)
                 )
-            reply.append(
-                TextMessage(text=reply_text,
-                                     keyboard=kb.GO_TO_MENU_KEYBOARD,
-                                     tracking_data=tracking_data,
-                                     min_api_version=3)
-            )
+        reply.append(
+            TextMessage(text=reply_text,
+                                 keyboard=kb.GO_TO_MENU_KEYBOARD,
+                                 tracking_data=tracking_data,
+                                 min_api_version=3)
+        )
     else:
         reply = [TextMessage(text=reply_text,
                              keyboard=reply_keyboard,
