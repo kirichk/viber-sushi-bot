@@ -16,7 +16,7 @@ from .response_map import RICH_RESPONSE_MAP, KEYBOARD_RESPONSE_MAP
 
 
 dotenv_definer()
-ADMIN = os.getenv("ADMIN")  # Person's ID who will receive all orders
+ADMINS = os.getenv("ADMIN").split('-')  # Person's ID who will receive all orders
 
 logger = logging.getLogger()
 logger.setLevel(os.getenv("LOG_LEVEL"))
@@ -74,7 +74,7 @@ def user_message_handler(viber, viber_request):
         elif text in RICH_RESPONSE_MAP:
             reply_alt_text = RICH_RESPONSE_MAP[text][0]
             reply_rich_media = RICH_RESPONSE_MAP[text][1]
-            
+
         ##########################################################
 
         elif text == 'pickup':
