@@ -36,7 +36,7 @@ def input_new_user(user_id: str, phone: str):
 
 def create_table():
     query = '''CREATE TABLE IF NOT EXISTS users
-                        (user_id PRIMARY KEY,
+                        (user_id VARCHAR(255),
                         phone VARCHAR(255));'''
     connection = psycopg2.connect(DATABASE_URL, sslmode='require')
     cursor = connection.cursor()
