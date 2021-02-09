@@ -84,7 +84,7 @@ def user_message_handler(viber, viber_request):
         elif text == 'edit':
             reply_text = 'Выберите какое блюдо вы желаете удалить.'
             reply_keyboard = keyboard_delete(tracking_data['order'])
-        elif text[:6] == 'delete'
+        elif text[:6] == 'delete':
             deleted_item = text.split('-')[1]
             tracking_data['order'].remove(deleted_item)
             reply_text = f'Вы удалили {deleted_item}\nВыберите дальнейшее дейтсвие.'
