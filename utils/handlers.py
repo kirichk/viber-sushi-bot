@@ -153,6 +153,8 @@ def user_message_handler(viber, viber_request):
                 reply_keyboard['Buttons'] += kb.ORDER_BUTTON
         if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
             reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
+        logger.info(tracking_data)
+        tracking_data = json.dumps(tracking_data)
         for template in reply_rich_media:
             reply.append(
                 RichMediaMessage(rich_media=template,
@@ -167,10 +169,10 @@ def user_message_handler(viber, viber_request):
                                  min_api_version=3)
         )
     else:
+        logger.info(tracking_data)
+        tracking_data = json.dumps(tracking_data)
         reply = [TextMessage(text=reply_text,
                              keyboard=reply_keyboard,
                              tracking_data=tracking_data,
                              min_api_version=3)]
-    logger.info(tracking_data)
-    tracking_data = json.dumps(tracking_data)
     viber.send_messages(viber_request.sender.id, reply)
