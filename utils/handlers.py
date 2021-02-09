@@ -13,6 +13,7 @@ from viberbot.api.messages.rich_media_message import RichMediaMessage
 from .resources import keyboards_content as kb
 from .tools import get_address, dotenv_definer, keyboard_delete
 from .response_map import RICH_RESPONSE_MAP, KEYBOARD_RESPONSE_MAP
+from .db_func import input_new_user
 
 
 dotenv_definer()
@@ -40,6 +41,7 @@ def user_message_handler(viber, viber_request):
 
     if isinstance(message, ContactMessage):
         # Handling reply after user shared his contact infromation
+        input_new_user(viber_request.sender.id, message.contact.phone_number)
         tracking_data['name'] = message.contact.name
         tracking_data['phone'] = message.contact.phone_number
         reply_keyboard = kb.MENU_KEYBOARD
