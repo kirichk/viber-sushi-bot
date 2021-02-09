@@ -67,6 +67,8 @@ def user_message_handler(viber, viber_request):
         if text in KEYBOARD_RESPONSE_MAP:
             reply_text = KEYBOARD_RESPONSE_MAP[text][0]
             reply_keyboard = KEYBOARD_RESPONSE_MAP[text][1]
+            if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
+                reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
             if 'order' in tracking_data and len(tracking_data['order']) > 0 and text not in ['address','confirmation']:
                 if kb.ORDER_BUTTON[0] not in reply_keyboard['Buttons']:
                     reply_keyboard['Buttons'] += kb.ORDER_BUTTON
@@ -74,8 +76,7 @@ def user_message_handler(viber, viber_request):
                 if kb.ORDER_BUTTON[0] in reply_keyboard['Buttons']:
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[0])
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
-            if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
-                reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
+
         ##########################################################
         ######## Dislpaying carousel of different items ##########
         ##########################################################
@@ -94,6 +95,8 @@ def user_message_handler(viber, viber_request):
             tracking_data['order'].remove(deleted_item)
             reply_text = f'Вы удалили {deleted_item}.\nВыберите дальнейшее дейтсвие.'
             reply_keyboard = kb.GO_TO_MENU_KEYBOARD
+            if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
+                reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
             if 'order' in tracking_data  and len(tracking_data['order']) > 0:
                 if kb.ORDER_BUTTON[0] not in reply_keyboard['Buttons']:
                     reply_keyboard['Buttons'] += kb.ORDER_BUTTON
@@ -101,8 +104,6 @@ def user_message_handler(viber, viber_request):
                 if kb.ORDER_BUTTON[0] in reply_keyboard['Buttons']:
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[0])
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
-            if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
-                reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
         elif text == 'pickup':
             tracking_data['location'] = 'Самовывоз'
             reply_text = "Для подтверждения заказа нажмите Заказать. Если хотите "\
@@ -161,6 +162,8 @@ def user_message_handler(viber, viber_request):
         reply_text = 'Выберите желаемую позицию из перечня выше. Для '\
                      'возвращения в меню воспользуйтесь клавиатурой внизу.'
         reply_keyboard = kb.GO_TO_MENU_KEYBOARD
+        if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
+            reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
         if 'order' in tracking_data and len(tracking_data['order']) > 0:
             if kb.ORDER_BUTTON[0] not in reply_keyboard['Buttons']:
                 reply_keyboard['Buttons'] += kb.ORDER_BUTTON
@@ -168,8 +171,6 @@ def user_message_handler(viber, viber_request):
             if kb.ORDER_BUTTON[0] in reply_keyboard['Buttons']:
                 reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[0])
                 reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
-        if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
-            reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
         logger.info(tracking_data)
         tracking_data = json.dumps(tracking_data)
         for template in reply_rich_media:
