@@ -129,18 +129,7 @@ GO_TO_MENU_KEYBOARD = {
     "DefaultHeight": False,
     "BgColor": "#FFFFFF",
     "Type": "keyboard",
-    "Buttons": [
-        {
-            "Columns": 6,
-            "Rows": 1,
-            "BgColor": "#e6f5ff",
-            "BgLoop": True,
-            "ActionType": "reply",
-            "ActionBody": "menu",
-            "ReplyType": "message",
-            "Text": "Меню"
-        }
-    ]
+    "Buttons": []
 }
 
 FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD = {
@@ -193,7 +182,7 @@ ORDER_BUTTON = [
         {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#a6bcff",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "confirmation",
@@ -203,7 +192,7 @@ ORDER_BUTTON = [
         {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#a6bcff",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "confirmation",
@@ -215,7 +204,7 @@ ORDER_BUTTON = [
 MENU_BUTTON = {
     "Columns": 6,
     "Rows": 1,
-    "BgColor": "#e6f5ff",
+    "BgColor": "#6b90ff",
     "BgLoop": True,
     "ActionType": "reply",
     "ActionBody": "menu",
