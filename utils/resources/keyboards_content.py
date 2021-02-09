@@ -105,7 +105,7 @@ SHARE_LOCATION_KEYBOARD = {
             "Text": "Отправить локацию"
         },
         {
-            "Columns": 3,
+            "Columns": 6,
             "Rows": 1,
             "BgColor": "#e6f5ff",
             "BgLoop": True,
