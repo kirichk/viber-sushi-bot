@@ -90,6 +90,11 @@ def user_message_handler(viber, viber_request):
             tracking_data['order'].remove(deleted_item)
             reply_text = f'Вы удалили {deleted_item}\nВыберите дальнейшее дейтсвие.'
             reply_keyboard = kb.GO_TO_MENU_KEYBOARD
+            if 'order' in tracking_data  and len(tracking_data['order']) > 0:
+                if kb.ORDER_BUTTON[0] not in reply_keyboard['Buttons']:
+                    reply_keyboard['Buttons'] += kb.ORDER_BUTTON
+            if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
+                reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
         elif text == 'pickup':
             tracking_data['location'] = 'Самовывоз'
             reply_text = "Для подтверждения заказа нажмите Заказать. Если хотите "\
