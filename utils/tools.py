@@ -79,7 +79,7 @@ def keyboard_delete(data):
                     "BgColor": "#e6f5ff",
                     "BgLoop": True,
                     "ActionType": "reply",
-                    "ActionBody": f'delete-{item}'',
+                    "ActionBody": f"delete-{item}",
                     "ReplyType": "message",
                     "Text": item
             } for item in data]
