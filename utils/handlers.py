@@ -6,13 +6,13 @@ Contains all bot answers for ViberMessageRequest
 import os
 import json
 import logging
-import utils.resources.keyboards_content as kb
-import utils.resources.rich_media_content as rm
 from viberbot.api.messages.text_message import TextMessage
 from viberbot.api.messages.contact_message import ContactMessage
 from viberbot.api.messages.location_message import LocationMessage
 from viberbot.api.messages.rich_media_message import RichMediaMessage
-from utils.tools import get_address, dotenv_definer
+from .resources import keyboards_content as kb
+from .tools import get_address, dotenv_definer
+from .response_map import RICH_RESPONSE_MAP, KEYBOARD_RESPONSE_MAP
 
 
 dotenv_definer()
@@ -20,6 +20,7 @@ ADMIN = os.getenv("ADMIN")  # Person's ID who will receive all orders
 
 logger = logging.getLogger()
 logger.setLevel(os.getenv("LOG_LEVEL"))
+
 
 def user_message_handler(viber, viber_request):
     """Receiving a message from user and sending replies."""
@@ -43,6 +44,11 @@ def user_message_handler(viber, viber_request):
         tracking_data['phone'] = message.contact.phone_number
         reply_keyboard = kb.MENU_KEYBOARD
         reply_text = 'Спасибо! Выберите интересующую Вас категорию.'
+        #####
+        user_data = f'{viber_request.sender.id} - {message.contact.phone_number}'
+        feedback = TextMessage(text=user_data)
+        viber.send_messages(ADMIN, feedback)
+        #####
     elif isinstance(message, LocationMessage):
         # Handling reply after a user shared his location and transcribing it
         tracking_data['location'] = get_address(message.location)
@@ -52,75 +58,23 @@ def user_message_handler(viber, viber_request):
             "добавить комментарий, нажмите соответствующую кнопку."
     else:
         text = viber_request.message.text
-        if text == 'sets_rolls':
-            # Dislpaying carousel of items in sets category
-            reply_keyboard = kb.SETS_ROLLS_KEYBOARD
-            reply_text = 'Выберите интересующую Вас подкатегорию.'
-        elif text == 'guncans_sushi':
-            # Dislpaying carousel of items in rolls category
-            reply_keyboard = kb.GUNCANS_SUSHI_KEYBOARD
-            reply_text = 'Выберите интересующую Вас подкатегорию.'
-        elif text == 'pizza_snacks':
-            # Dislpaying carousel of items in pizza category
-            reply_keyboard = kb.PIZZA_SNACKS_KEYBOARD
-            reply_text = 'Выберите интересующую Вас подкатегорию.'
-        elif text == 'other':
-            # Dislpaying carousel of items in snacks category
-            reply_keyboard = kb.OTHER_KEYBOARD
-            reply_text = 'Выберите интересующую Вас подкатегорию.'
+
+        ##########################################################
+        ######## Dislpaying keyboard of different items ##########
+        ##########################################################
+
+        if text in KEYBOARD_RESPONSE_MAP:
+            reply_text = KEYBOARD_RESPONSE_MAP[text][0]
+            reply_keyboard = KEYBOARD_RESPONSE_MAP[text][1]
 
         ##########################################################
         ######## Dislpaying carousel of different items ##########
         ##########################################################
-
-        elif text == 'sets':
-            reply_alt_text = 'Выбор сетов'
-            reply_rich_media = rm.RICH_MEDIA_SETS
-        elif text == 'rolls':
-            reply_alt_text = 'Выбор роллов'
-            reply_rich_media = rm.RICH_MEDIA_ROLLS
-        elif text == 'guncans':
-            reply_alt_text = 'Выбор гунканов'
-            reply_rich_media = rm.RICH_MEDIA_GUNCANS
-        elif text == 'sushi':
-            reply_alt_text = 'Выбор суши'
-            reply_rich_media = rm.RICH_MEDIA_SUSHI
-        elif text == 'pizza':
-            reply_alt_text = 'Выбор пиццы'
-            reply_rich_media = rm.RICH_MEDIA_PIZZA
-        elif text == 'combo':
-            reply_alt_text = 'Выбор комбо'
-            reply_rich_media = rm.RICH_MEDIA_COMBO
-        elif text == 'nuggets_wings':
-            reply_alt_text = 'Выбор наггетсов и крылишек'
-            reply_rich_media = rm.RICH_MEDIA_NUGGETS_WINGS
-        elif text == 'mussils':
-            reply_alt_text = 'Выбор мидий'
-            reply_rich_media = rm.RICH_MEDIA_MUSSILS
-        elif text == 'sauces':
-            reply_alt_text = 'Выбор соусов'
-            reply_rich_media = rm.RICH_MEDIA_SAUCES
-        elif text == 'drinks':
-            reply_alt_text = 'Выбор напитков'
-            reply_rich_media = rm.RICH_MEDIA_DRINKS
-        elif text == 'offers':
-            reply_alt_text = 'Меню недоступно'
-            reply_rich_media = rm.RICH_MEDIA_SETS
-        elif text == 'delivery':
-            reply_alt_text = 'Меню недоступно'
-            reply_rich_media = rm.RICH_MEDIA_SETS
-
+        elif text in RICH_RESPONSE_MAP:
+            reply_alt_text = RICH_RESPONSE_MAP[text][0]
+            reply_rich_media = RICH_RESPONSE_MAP[text][1]
         ##########################################################
 
-        elif text == 'menu':
-            # Dislpaying categories of menu
-            reply_keyboard = kb.MENU_KEYBOARD
-            reply_text = 'Выберите интересующую Вас категорию.'
-        elif text == 'confirmation':
-            # If user confirmed his order he should send his location
-            reply_keyboard = kb.SHARE_LOCATION_KEYBOARD
-            reply_text = 'Укажите адрес доставки заказа. '\
-                         'Для этого нажмите Отправить Локацию.'
         elif text == 'comment':
             # Setting the possibility to write a comment
             tracking_data['comment_mode'] = 'on'
@@ -139,11 +93,14 @@ def user_message_handler(viber, viber_request):
         elif text == 'send_order':
             # Final step, sends all info to manager and resets tracking_data
             tracking_data['comment_mode'] = 'off'
-            mesage_to_admin = f"Новый заказ!\nИмя: {tracking_data['name']}\n"\
-                              f"Номер: {tracking_data['phone']}\n"\
-                              f"Заказ: {', '.join(tracking_data['order'])}\n"\
-                              f"Адрес: {tracking_data['location']}\n"\
-                              f"Комментарий: {tracking_data['comment']}\n"
+            mesage_to_admin = "Новый заказ!\n"
+            if tracking_data['name'] is not None:
+                mesage_to_admin += f"Имя: {tracking_data['name']}\n"
+            mesage_to_admin += f"Номер: {tracking_data['phone']}\n"\
+                               f"Заказ: {', '.join(tracking_data['order'])}\n"\
+                               f"Адрес: {tracking_data['location']}\n"
+            if 'comment' in tracking_data:
+                mesage_to_admin += f"Комментарий: {tracking_data['comment']}\n"
             viber.send_messages(ADMIN, TextMessage(text=mesage_to_admin))
             tracking_data['order'] = []
             tracking_data['location'] = ''
@@ -170,10 +127,22 @@ def user_message_handler(viber, viber_request):
     tracking_data = json.dumps(tracking_data)
 
     if reply_rich_media:
-        reply = [RichMediaMessage(rich_media=reply_rich_media,
-                                  alt_text=reply_alt_text,
-                                  tracking_data=tracking_data,
-                                  min_api_version=7)]
+        reply = []
+        reply_text = 'Выберите желаемую позицию из перечня выше. Для '\
+                     'возвращения в меню воспользуйтесь клавиатурой внизу.'
+        for template in reply_rich_media:
+            reply.append(
+                RichMediaMessage(rich_media=template,
+                                 alt_text=reply_alt_text,
+                                 tracking_data=tracking_data,
+                                 min_api_version=7)
+                )
+        reply.append(
+            TextMessage(text=reply_text,
+                                 keyboard=kb.GO_TO_MENU_KEYBOARD,
+                                 tracking_data=tracking_data,
+                                 min_api_version=3)
+        )
     else:
         reply = [TextMessage(text=reply_text,
                              keyboard=reply_keyboard,
