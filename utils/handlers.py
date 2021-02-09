@@ -150,6 +150,12 @@ def user_message_handler(viber, viber_request):
         reply = []
         reply_text = 'Выберите желаемую позицию из перечня выше. Для '\
                      'возвращения в меню воспользуйтесь клавиатурой внизу.'
+        reply_keyboard = kb.GO_TO_MENU_KEYBOARD
+        if len(tracking_data['order']) > 0 and text not in ['address','confirmation']:
+            if kb.ORDER_BUTTON[0] not in reply_keyboard['Buttons']:
+                reply_keyboard['Buttons'] += kb.ORDER_BUTTON
+        if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
+            reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
         for template in reply_rich_media:
             reply.append(
                 RichMediaMessage(rich_media=template,
@@ -159,7 +165,7 @@ def user_message_handler(viber, viber_request):
                 )
         reply.append(
             TextMessage(text=reply_text,
-                                 keyboard=kb.GO_TO_MENU_KEYBOARD,
+                                 keyboard=reply_keyboard,
                                  tracking_data=tracking_data,
                                  min_api_version=3)
         )
