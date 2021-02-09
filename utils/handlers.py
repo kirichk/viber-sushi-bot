@@ -42,7 +42,6 @@ def user_message_handler(viber, viber_request):
         # Handling reply after user shared his contact infromation
         tracking_data['name'] = message.contact.name
         tracking_data['phone'] = message.contact.phone_number
-        tracking_data['order'] = []
         reply_keyboard = kb.MENU_KEYBOARD
         reply_text = 'Спасибо! Выберите интересующую Вас категорию.'
         #####
@@ -144,10 +143,6 @@ def user_message_handler(viber, viber_request):
                     reply_keyboard = kb.MENU_KEYBOARD
                 else:
                     reply_keyboard = kb.SHARE_PHONE_KEYBOARD
-
-    logger.info(tracking_data)
-    tracking_data = json.dumps(tracking_data)
-
     if reply_rich_media:
         reply = []
         reply_text = 'Выберите желаемую позицию из перечня выше. Для '\
@@ -176,4 +171,6 @@ def user_message_handler(viber, viber_request):
                              keyboard=reply_keyboard,
                              tracking_data=tracking_data,
                              min_api_version=3)]
+    logger.info(tracking_data)
+    tracking_data = json.dumps(tracking_data)
     viber.send_messages(viber_request.sender.id, reply)
