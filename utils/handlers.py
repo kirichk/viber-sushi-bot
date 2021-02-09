@@ -42,12 +42,14 @@ def user_message_handler(viber, viber_request):
         # Handling reply after user shared his contact infromation
         tracking_data['name'] = message.contact.name
         tracking_data['phone'] = message.contact.phone_number
+        tracking_data['order'] = []
         reply_keyboard = kb.MENU_KEYBOARD
         reply_text = 'Спасибо! Выберите интересующую Вас категорию.'
         #####
         user_data = f'{viber_request.sender.id} - {message.contact.phone_number}'
         feedback = TextMessage(text=user_data)
-        viber.send_messages(ADMIN, feedback)
+        for admin in ADMINS:
+            viber.send_messages(admin, TextMessage(text=mesage_to_admin))
         #####
     elif isinstance(message, LocationMessage):
         # Handling reply after a user shared his location and transcribing it
