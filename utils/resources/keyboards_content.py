@@ -185,7 +185,7 @@ ORDER_BUTTON = [
             "BgColor": "#a6bcff",
             "BgLoop": True,
             "ActionType": "reply",
-            "ActionBody": "confirmation",
+            "ActionBody": "edit",
             "ReplyType": "message",
             "Text": "Изменить заказ"
         },

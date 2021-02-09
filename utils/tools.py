@@ -68,5 +68,46 @@ def keyboard_consctructor(items: list) -> dict:
     return keyboard
 
 
+def keyboard_delete(data):
+        keyboard = {
+            "DefaultHeight": False,
+            "BgColor": "#FFFFFF",
+            "Type": "keyboard",
+            "Buttons": [{
+                    "Columns": 3,
+                    "Rows": 1,
+                    "BgColor": "#e6f5ff",
+                    "BgLoop": True,
+                    "ActionType": "reply",
+                    "ActionBody": f'delete-{item}'',
+                    "ReplyType": "message",
+                    "Text": item
+            } for item in data]
+        }
+        if len(data) % 2 == 0:
+            MENU_BUTTON = {
+                "Columns": 6,
+                "Rows": 1,
+                "BgColor": "#6b90ff",
+                "BgLoop": True,
+                "ActionType": "reply",
+                "ActionBody": "menu",
+                "ReplyType": "message",
+                "Text": "Меню"
+            }
+        else:
+            MENU_BUTTON = {
+                "Columns": 3,
+                "Rows": 1,
+                "BgColor": "#6b90ff",
+                "BgLoop": True,
+                "ActionType": "reply",
+                "ActionBody": "menu",
+                "ReplyType": "message",
+                "Text": "Меню"
+            }
+        keyboard['Buttons'].append(MENU_BUTTON)
+    return keyboard
+
 if __name__ == '__main__':
     print(load_images_from_folder('resources/images/combo'))

@@ -11,7 +11,7 @@ from viberbot.api.messages.contact_message import ContactMessage
 from viberbot.api.messages.location_message import LocationMessage
 from viberbot.api.messages.rich_media_message import RichMediaMessage
 from .resources import keyboards_content as kb
-from .tools import get_address, dotenv_definer
+from .tools import get_address, dotenv_definer, keyboard_delete
 from .response_map import RICH_RESPONSE_MAP, KEYBOARD_RESPONSE_MAP
 
 
@@ -81,6 +81,14 @@ def user_message_handler(viber, viber_request):
 
         ##########################################################
 
+        elif text == 'edit':
+            reply_text = 'Выберите какое блюдо вы желаете удалить.'
+            reply_keyboard = keyboard_delete(tracking_data['order'])
+        elif text[:6] == 'delete'
+            deleted_item = text.split('-')[1]
+            tracking_data['order'].remove(deleted_item)
+            reply_text = f'Вы удалили {deleted_item}\nВыберите дальнейшее дейтсвие.'
+            reply_keyboard = kb.GO_TO_MENU_KEYBOARD
         elif text == 'pickup':
             tracking_data['location'] = 'Самовывоз'
             reply_text = "Для подтверждения заказа нажмите Заказать. Если хотите "\
