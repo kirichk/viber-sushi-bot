@@ -17,7 +17,7 @@ from .db_func import input_new_user
 
 
 dotenv_definer()
-ADMINS = os.getenv("ADMIN").split('-')  # Person's ID who will receive all orders
+ADMINS = os.getenv("ADMIN").split(',')  # Person's ID who will receive all orders
 
 logger = logging.getLogger()
 logger.setLevel(os.getenv("LOG_LEVEL"))
