@@ -70,11 +70,18 @@ def user_message_handler(viber, viber_request):
         ##########################################################
         ######## Dislpaying carousel of different items ##########
         ##########################################################
+
         elif text in RICH_RESPONSE_MAP:
             reply_alt_text = RICH_RESPONSE_MAP[text][0]
             reply_rich_media = RICH_RESPONSE_MAP[text][1]
+            
         ##########################################################
 
+        elif text == 'pickup':
+            tracking_data['location'] = 'Самовывоз'
+            reply_text = "Для подтверждения заказа нажмите Заказать. Если хотите "\
+                         "добавить комментарий, нажмите соответствующую кнопку."
+            reply_keyboard = kb.FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD
         elif text == 'comment':
             # Setting the possibility to write a comment
             tracking_data['comment_mode'] = 'on'
@@ -122,7 +129,7 @@ def user_message_handler(viber, viber_request):
                     reply_keyboard = kb.MENU_KEYBOARD
                 else:
                     reply_keyboard = kb.SHARE_PHONE_KEYBOARD
-                    
+
     logger.info(tracking_data)
     tracking_data = json.dumps(tracking_data)
 

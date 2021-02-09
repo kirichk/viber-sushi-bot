@@ -51,6 +51,44 @@ SHARE_PHONE_KEYBOARD = {
     ]
 }
 
+DELIVERY_TYPE_KEYBOARD = {
+    "DefaultHeight": False,
+    "BgColor": "#FFFFFF",
+    "Type": "keyboard",
+    "Buttons": [
+        {
+            "Columns": 3,
+            "Rows": 1,
+            "BgColor": "#e6f5ff",
+            "BgLoop": True,
+            "ActionType": "reply",
+            "ActionBody": "pickup",
+            "ReplyType": "message",
+            "Text": "Самовывоз"
+        },
+        {
+            "Columns": 3,
+            "Rows": 1,
+            "BgColor": "#e6f5ff",
+            "BgLoop": True,
+            "ActionType": "reply",
+            "ActionBody": "address",
+            "ReplyType": "message",
+            "Text": "Доставка"
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "BgColor": "#e6f5ff",
+            "BgLoop": True,
+            "ActionType": "reply",
+            "ActionBody": "menu",
+            "ReplyType": "message",
+            "Text": "Меню"
+        }
+    ]
+}
+
 SHARE_LOCATION_KEYBOARD = {
     "DefaultHeight": False,
     "BgColor": "#FFFFFF",
@@ -65,6 +103,16 @@ SHARE_LOCATION_KEYBOARD = {
             "ActionBody": "location",
             "ReplyType": "message",
             "Text": "Отправить локацию"
+        },
+        {
+            "Columns": 3,
+            "Rows": 1,
+            "BgColor": "#e6f5ff",
+            "BgLoop": True,
+            "ActionType": "reply",
+            "ActionBody": "menu",
+            "ReplyType": "message",
+            "Text": "Меню"
         }
     ]
 }
