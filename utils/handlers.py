@@ -67,9 +67,13 @@ def user_message_handler(viber, viber_request):
         if text in KEYBOARD_RESPONSE_MAP:
             reply_text = KEYBOARD_RESPONSE_MAP[text][0]
             reply_keyboard = KEYBOARD_RESPONSE_MAP[text][1]
-            if 'order' in tracking_data  and len(tracking_data['order']) > 0 and text not in ['address','confirmation']:
+            if 'order' in tracking_data and len(tracking_data['order']) > 0 and text not in ['address','confirmation']:
                 if kb.ORDER_BUTTON[0] not in reply_keyboard['Buttons']:
                     reply_keyboard['Buttons'] += kb.ORDER_BUTTON
+            if 'order' in tracking_data  and len(tracking_data['order']) == 0 and text not in ['address','confirmation']:
+                if kb.ORDER_BUTTON[0] in reply_keyboard['Buttons']:
+                    reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[0])
+                    reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
             if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
                 reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
         ##########################################################
@@ -88,11 +92,15 @@ def user_message_handler(viber, viber_request):
         elif text[:6] == 'delete':
             deleted_item = text.split('-')[1]
             tracking_data['order'].remove(deleted_item)
-            reply_text = f'Вы удалили {deleted_item}\nВыберите дальнейшее дейтсвие.'
+            reply_text = f'Вы удалили {deleted_item}.\nВыберите дальнейшее дейтсвие.'
             reply_keyboard = kb.GO_TO_MENU_KEYBOARD
             if 'order' in tracking_data  and len(tracking_data['order']) > 0:
                 if kb.ORDER_BUTTON[0] not in reply_keyboard['Buttons']:
                     reply_keyboard['Buttons'] += kb.ORDER_BUTTON
+            if 'order' in tracking_data  and len(tracking_data['order']) == 0:
+                if kb.ORDER_BUTTON[0] in reply_keyboard['Buttons']:
+                    reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[0])
+                    reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
             if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
                 reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
         elif text == 'pickup':
@@ -124,7 +132,7 @@ def user_message_handler(viber, viber_request):
             mesage_to_admin += f"Номер: {tracking_data['phone']}\n"\
                                f"Заказ: {', '.join(tracking_data['order'])}\n"\
                                f"Адрес: {tracking_data['location']}\n"
-            if 'comment' in tracking_data:
+            if 'comment' in tracking_data and :
                 mesage_to_admin += f"Комментарий: {tracking_data['comment']}\n"
             for admin in ADMINS:
                 viber.send_messages(admin, TextMessage(text=mesage_to_admin))
@@ -156,6 +164,10 @@ def user_message_handler(viber, viber_request):
         if 'order' in tracking_data and len(tracking_data['order']) > 0:
             if kb.ORDER_BUTTON[0] not in reply_keyboard['Buttons']:
                 reply_keyboard['Buttons'] += kb.ORDER_BUTTON
+        if 'order' in tracking_data  and len(tracking_data['order']) == 0:
+            if kb.ORDER_BUTTON[0] in reply_keyboard['Buttons']:
+                reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[0])
+                reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
         if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
             reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
         logger.info(tracking_data)
