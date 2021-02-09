@@ -66,10 +66,13 @@ def user_message_handler(viber, viber_request):
         if text in KEYBOARD_RESPONSE_MAP:
             reply_text = KEYBOARD_RESPONSE_MAP[text][0]
             reply_keyboard = KEYBOARD_RESPONSE_MAP[text][1]
+            without_menu_button_list = ['menu', 'confirmation',
+                                        'offers', 'delivery']
             if len(tracking_data['order']) > 0 and text not in ['address','confirmation']:
-                if kb.ORDER_BUTTON not in reply_keyboard['Buttons']:
-                    reply_keyboard['Buttons'].append(kb.ORDER_BUTTON)
-
+                if kb.ORDER_BUTTON[0] not in reply_keyboard['Buttons']:
+                    reply_keyboard['Buttons'] += kb.ORDER_BUTTON
+            if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text not in without_menu_button_list:
+                reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
         ##########################################################
         ######## Dislpaying carousel of different items ##########
         ##########################################################

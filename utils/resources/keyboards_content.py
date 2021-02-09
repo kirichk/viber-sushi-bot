@@ -75,16 +75,6 @@ DELIVERY_TYPE_KEYBOARD = {
             "ActionBody": "address",
             "ReplyType": "message",
             "Text": "Доставка"
-        },
-        {
-            "Columns": 6,
-            "Rows": 1,
-            "BgColor": "#e6f5ff",
-            "BgLoop": True,
-            "ActionType": "reply",
-            "ActionBody": "menu",
-            "ReplyType": "message",
-            "Text": "Меню"
         }
     ]
 }
@@ -103,16 +93,6 @@ SHARE_LOCATION_KEYBOARD = {
             "ActionBody": "location",
             "ReplyType": "message",
             "Text": "Отправить локацию"
-        },
-        {
-            "Columns": 6,
-            "Rows": 1,
-            "BgColor": "#e6f5ff",
-            "BgLoop": True,
-            "ActionType": "reply",
-            "ActionBody": "menu",
-            "ReplyType": "message",
-            "Text": "Меню"
         }
     ]
 }
@@ -209,21 +189,42 @@ FINAL_COMFIRMATION_WITHOUT_COMMENT_KEYBOARD = {
     ]
 }
 
+ORDER_BUTTON = [
+        {
+            "Columns": 3,
+            "Rows": 1,
+            "BgColor": "#e6f5ff",
+            "BgLoop": True,
+            "ActionType": "reply",
+            "ActionBody": "confirmation",
+            "ReplyType": "message",
+            "Text": "Изменить заказ"
+        },
+        {
+            "Columns": 3,
+            "Rows": 1,
+            "BgColor": "#e6f5ff",
+            "BgLoop": True,
+            "ActionType": "reply",
+            "ActionBody": "confirmation",
+            "ReplyType": "message",
+            "Text": "Оформить заказ"
+        },
+]
 
-ORDER_BUTTON = {
+MENU_BUTTON = {
     "Columns": 6,
     "Rows": 1,
     "BgColor": "#e6f5ff",
     "BgLoop": True,
     "ActionType": "reply",
-    "ActionBody": "confirmation",
+    "ActionBody": "menu",
     "ReplyType": "message",
-    "Text": "Оформить заказ"
+    "Text": "Меню"
 }
 
-
-MENU_KEYBOARD = keyboard_consctructor(MENU_NAMES, False)
-SETS_ROLLS_KEYBOARD = keyboard_consctructor(SETS_ROLLS_MENU, True)
-GUNCANS_SUSHI_KEYBOARD = keyboard_consctructor(GUNCANS_SUSHI_MENU, True)
-PIZZA_SNACKS_KEYBOARD = keyboard_consctructor(PIZZA_SNACKS_MENU, True)
-OTHER_KEYBOARD = keyboard_consctructor(OTHER_MENU, True)
+MENU_KEYBOARD = keyboard_consctructor(MENU_NAMES)
+SETS_ROLLS_KEYBOARD = keyboard_consctructor(SETS_ROLLS_MENU)
+GUNCANS_SUSHI_KEYBOARD = keyboard_consctructor(GUNCANS_SUSHI_MENU)
+PIZZA_SNACKS_KEYBOARD = keyboard_consctructor(PIZZA_SNACKS_MENU)
+OTHER_KEYBOARD = keyboard_consctructor(OTHER_MENU)
