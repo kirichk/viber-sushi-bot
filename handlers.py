@@ -165,6 +165,7 @@ def user_message_handler(viber, viber_request):
                     reply_keyboard = kb.MENU_KEYBOARD
                 else:
                     reply_keyboard = kb.SHARE_PHONE_KEYBOARD
+                    
     logger.info(tracking_data)
     tracking_data = json.dumps(tracking_data)
 
