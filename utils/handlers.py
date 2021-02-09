@@ -66,6 +66,8 @@ def user_message_handler(viber, viber_request):
         if text in KEYBOARD_RESPONSE_MAP:
             reply_text = KEYBOARD_RESPONSE_MAP[text][0]
             reply_keyboard = KEYBOARD_RESPONSE_MAP[text][1]
+            if tracking_data['order'] != '' and text not in ['address','confirmation':
+                reply_keyboard['Buttons'].append(kb.ORDER_BUTTON)
 
         ##########################################################
         ######## Dislpaying carousel of different items ##########
@@ -108,7 +110,8 @@ def user_message_handler(viber, viber_request):
                                f"Адрес: {tracking_data['location']}\n"
             if 'comment' in tracking_data:
                 mesage_to_admin += f"Комментарий: {tracking_data['comment']}\n"
-            viber.send_messages(ADMIN, TextMessage(text=mesage_to_admin))
+            for admin in ADMINS:
+                viber.send_messages(admin, TextMessage(text=mesage_to_admin))
             tracking_data['order'] = []
             tracking_data['location'] = ''
             tracking_data['comment'] = ''

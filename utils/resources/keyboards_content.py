@@ -210,6 +210,18 @@ FINAL_COMFIRMATION_WITHOUT_COMMENT_KEYBOARD = {
 }
 
 
+ORDER_BUTTON = {
+    "Columns": 6,
+    "Rows": 1,
+    "BgColor": "#e6f5ff",
+    "BgLoop": True,
+    "ActionType": "reply",
+    "ActionBody": "confirmation",
+    "ReplyType": "message",
+    "Text": "Оформить заказ"
+}
+
+
 MENU_KEYBOARD = keyboard_consctructor(MENU_NAMES)
 SETS_ROLLS_KEYBOARD = keyboard_consctructor(SETS_ROLLS_MENU)
 GUNCANS_SUSHI_KEYBOARD = keyboard_consctructor(GUNCANS_SUSHI_MENU)
