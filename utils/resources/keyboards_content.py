@@ -222,8 +222,8 @@ ORDER_BUTTON = {
 }
 
 
-MENU_KEYBOARD = keyboard_consctructor(MENU_NAMES)
-SETS_ROLLS_KEYBOARD = keyboard_consctructor(SETS_ROLLS_MENU)
-GUNCANS_SUSHI_KEYBOARD = keyboard_consctructor(GUNCANS_SUSHI_MENU)
-PIZZA_SNACKS_KEYBOARD = keyboard_consctructor(PIZZA_SNACKS_MENU)
-OTHER_KEYBOARD = keyboard_consctructor(OTHER_MENU)
+MENU_KEYBOARD = keyboard_consctructor(MENU_NAMES, False)
+SETS_ROLLS_KEYBOARD = keyboard_consctructor(SETS_ROLLS_MENU, True)
+GUNCANS_SUSHI_KEYBOARD = keyboard_consctructor(GUNCANS_SUSHI_MENU, True)
+PIZZA_SNACKS_KEYBOARD = keyboard_consctructor(PIZZA_SNACKS_MENU, True)
+OTHER_KEYBOARD = keyboard_consctructor(OTHER_MENU, True)

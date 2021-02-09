@@ -48,7 +48,7 @@ def rich_message_consctructor(category: str) -> dict:
     return templates
 
 
-def keyboard_consctructor(items: list) -> dict:
+def keyboard_consctructor(items: list, add_menu_button: bool) -> dict:
     """Pasting infromation from list of items to keyboard menu template."""
     keyboard = {
         "DefaultHeight": False,
@@ -65,6 +65,18 @@ def keyboard_consctructor(items: list) -> dict:
                 "Text": item[1]
         } for item in items]
     }
+    if add_menu_button:
+        MENU_BUTTON = {
+            "Columns": 6,
+            "Rows": 1,
+            "BgColor": "#e6f5ff",
+            "BgLoop": True,
+            "ActionType": "reply",
+            "ActionBody": "menu",
+            "ReplyType": "message",
+            "Text": "Меню"
+        }
+        keyboard['Buttons'].append(MENU_BUTTON)
     return keyboard
 
 
