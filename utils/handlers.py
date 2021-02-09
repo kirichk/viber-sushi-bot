@@ -66,7 +66,6 @@ def user_message_handler(viber, viber_request):
         if text in KEYBOARD_RESPONSE_MAP:
             reply_text = KEYBOARD_RESPONSE_MAP[text][0]
             reply_keyboard = KEYBOARD_RESPONSE_MAP[text][1]
-            print('Заказ - ' + tracking_data['order'])
             if len(tracking_data['order']) > 0 and text not in ['address','confirmation']:
                 reply_keyboard['Buttons'].append(kb.ORDER_BUTTON)
 
