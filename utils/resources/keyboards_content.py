@@ -41,7 +41,7 @@ SHARE_PHONE_KEYBOARD = {
         {
             "Columns": 6,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "share-phone",
             "ActionBody": "phone_reply",
@@ -59,7 +59,7 @@ DELIVERY_TYPE_KEYBOARD = {
         {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "pickup",
@@ -69,7 +69,7 @@ DELIVERY_TYPE_KEYBOARD = {
         {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "address",
@@ -87,7 +87,7 @@ SHARE_LOCATION_KEYBOARD = {
         {
             "Columns": 6,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "location-picker",
             "ActionBody": "location",
@@ -105,7 +105,7 @@ ORDER_COMFIRMATION_KEYBOARD = {
         {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "menu",
@@ -115,7 +115,7 @@ ORDER_COMFIRMATION_KEYBOARD = {
         {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "confirmation",
@@ -140,7 +140,7 @@ FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD = {
         {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "send_order",
@@ -150,7 +150,7 @@ FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD = {
         {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "comment",
@@ -168,7 +168,7 @@ FINAL_COMFIRMATION_WITHOUT_COMMENT_KEYBOARD = {
         {
             "Columns": 6,
             "Rows": 1,
-            "BgColor": "#e6f5ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "send_order",
@@ -182,7 +182,7 @@ ORDER_BUTTON = [
         {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#a6bcff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "edit",
@@ -192,7 +192,7 @@ ORDER_BUTTON = [
         {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#a6bcff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "confirmation",
@@ -204,7 +204,7 @@ ORDER_BUTTON = [
 MENU_BUTTON = {
     "Columns": 6,
     "Rows": 1,
-    "BgColor": "#6b90ff",
+    "BgColor": "#97be2f",
     "BgLoop": True,
     "ActionType": "reply",
     "ActionBody": "menu",
