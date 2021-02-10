@@ -62,7 +62,7 @@ def keyboard_consctructor(items: list) -> dict:
                 "ActionType": "reply",
                 "ActionBody": item[0],
                 "ReplyType": "message",
-                "Text": '✖️ ' + item[1]
+                "Text": item[1]
         } for item in items]
     }
     return keyboard
@@ -81,7 +81,7 @@ def keyboard_delete(data):
                 "ActionType": "reply",
                 "ActionBody": f"delete-{item}",
                 "ReplyType": "message",
-                "Text": item
+                "Text": '✖️ ' + item
         } for item in data]
     }
     if len(data) % 2 == 0:
