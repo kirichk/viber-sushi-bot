@@ -79,10 +79,10 @@ def keyboard_delete(data):
                 "BgColor": "#97be2f",
                 "BgLoop": True,
                 "ActionType": "reply",
-                "ActionBody": f"delete_{item}",
+                "ActionBody": f"delete_{item[0]}",
                 "ReplyType": "message",
-                "Text": '✖️ ' + item
-        } for item[0] in data]
+                "Text": '✖️ ' + item[0]
+        } for item in data]
     }
     if len(data) % 2 == 0:
         MENU_BUTTON = {
