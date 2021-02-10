@@ -101,9 +101,9 @@ MEDIA_MAP = {
             ('https://i.imgur.com/oFxcKJn.jpg', 'Ролл "Икура"'),
             ('https://i.imgur.com/tKMcoMO.jpg', 'Спринг-ролл с тигровой креветкой'),
             ('https://i.imgur.com/jUvuk9R.jpg', 'Спринг-ролл с лососем'),
-            ('https://i.imgur.com/chnOEcr.jpg', 'Ролл "Филадельфия Икура"'),
-            ('https://i.imgur.com/KHQWSgx.jpg', 'Ролл "Филадельфия" с манго'),
-            ('https://i.imgur.com/2FgWeQg.jpg', 'Ролл спайси-масляная'),
+            # ('https://i.imgur.com/chnOEcr.jpg', 'Ролл "Филадельфия Икура"'),
+            # ('https://i.imgur.com/KHQWSgx.jpg', 'Ролл "Филадельфия" с манго'),
+            # ('https://i.imgur.com/2FgWeQg.jpg', 'Ролл спайси-масляная'),
         ]
     ],
     'sauces': [
