@@ -94,7 +94,10 @@ def user_message_handler(viber, viber_request):
             reply_keyboard = keyboard_delete(tracking_data['order'])
         elif text[:6] == 'delete':
             deleted_item = text.split('_')[1]
-            tracking_data['order'].remove(deleted_item)
+            for item in tracking_data['order']:
+                if item[0] == deleted_item:
+                    tracking_data['order'].remove(item)
+                    break
             reply_text = f'Вы удалили {deleted_item}.\nВыберите дальнейшее дейтсвие.'
             reply_keyboard = kb.GO_TO_MENU_KEYBOARD
             if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
@@ -123,7 +126,7 @@ def user_message_handler(viber, viber_request):
                 tracking_data['order'].append((ordered_item, item_price))
             else:
                 tracking_data['order'] = [(ordered_item, item_price)]
-            invoice = [u"\u2022" + f'{ x[0]} - {x[1]} грн.' for x in tracking_data['order']]
+            invoice = [u"\u2022" + f'{  x[0]} - {x[1]} грн.' for x in tracking_data['order']]
             bslash = '\n'
             reply_text = f'Вы выбрали:\n{bslash.join(invoice)}\n\n'\
                 'Если желаете выбрать что-нибудь еще, нажмите Меню. '\

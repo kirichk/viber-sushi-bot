@@ -82,7 +82,7 @@ def keyboard_delete(data):
                 "ActionBody": f"delete_{item}",
                 "ReplyType": "message",
                 "Text": '✖️ ' + item
-        } for item in data]
+        } for item[0] in data]
     }
     if len(data) % 2 == 0:
         MENU_BUTTON = {
