@@ -138,10 +138,14 @@ def user_message_handler(viber, viber_request):
             # Final step, sends all info to manager and resets tracking_data
             tracking_data['comment_mode'] = 'off'
             mesage_to_admin = "Новый заказ!\n"
+            total_price = sum([int(x[1]) for x in tracking_data['order']])
+            invoice = [u"\u2022" + f' {x[0]} - {x[1]} грн.' for x in tracking_data['order']]
+            bslash = '\n'
             if tracking_data['name'] is not None:
                 mesage_to_admin += f"Имя: {tracking_data['name']}\n"
             mesage_to_admin += f"Номер: {tracking_data['phone']}\n"\
-                               f"Заказ: {', '.join(tracking_data['order'])}\n"\
+                               f"Заказ:\n{bslash.join(invoice)}\n"\
+                               f"Всего: {total_price} грн.\n"\
                                f"Адрес: {tracking_data['location']}\n"
             if 'comment' in tracking_data and tracking_data['comment'] != '':
                 mesage_to_admin += f"Комментарий: {tracking_data['comment']}\n"
