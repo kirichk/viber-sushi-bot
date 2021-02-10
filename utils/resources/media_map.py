@@ -67,7 +67,7 @@ MEDIA_MAP = {
     'rolls': [
         [
             ('https://i.imgur.com/Gi5IonL.jpg', 'Ролл "Филадельфия"'),
-            ('https://imgur.com/a/tAsAwQs', 'Ролл "Филадельфия" Double Cheese'),
+            ('https://i.imgur.com/g4wIqRz.jpg', 'Ролл "Филадельфия" Double Cheese'),
             ('https://i.imgur.com/5kMeLDI.jpg', 'Ролл "Калифорния" с креветкой'),
             ('https://i.imgur.com/jQGJ7rw.jpg', 'Ролл "Калифорния" с тунцом'),
             ('https://i.imgur.com/YBW8wfL.jpg', 'Ролл "Калифорния" с лососем'),
