@@ -93,7 +93,7 @@ def user_message_handler(viber, viber_request):
             reply_text = 'Выберите какое блюдо вы желаете удалить.'
             reply_keyboard = keyboard_delete(tracking_data['order'])
         elif text[:6] == 'delete':
-            deleted_item = text.split('-')[1]
+            deleted_item = text.split('_')[1]
             tracking_data['order'].remove(deleted_item)
             reply_text = f'Вы удалили {deleted_item}.\nВыберите дальнейшее дейтсвие.'
             reply_keyboard = kb.GO_TO_MENU_KEYBOARD
@@ -117,12 +117,14 @@ def user_message_handler(viber, viber_request):
             reply_text = 'Напишите Ваши пожелания в ответ на это сообщение.'
         elif text[:5] == 'order':
             # Handling user selection of product, and dislpaying his choice
-            ordered_item = text.split('-')[1]
+            ordered_item = text.split('_')[1]
+            item_price = text.split('_')[2]
             if 'order' in tracking_data:
-                tracking_data['order'].append(ordered_item)
+                tracking_data['order'].append((ordered_item, item_price))
             else:
-                tracking_data['order'] = [ordered_item]
-            reply_text = f'Вы выбрали:\n{", ".join(tracking_data["order"])}\n\n'\
+                tracking_data['order'] = [(ordered_item, item_price)]
+            invoice = [f'{x[0]} - {x[1]} грн.' for x in tracking_data['order']]
+            reply_text = f'Вы выбрали:\n{"\n".join(invoice)}\n\n'\
                 'Если желаете выбрать что-нибудь еще, нажмите Меню. '\
                 'Для продолжения, нажмите Оформить заказ.'
             reply_keyboard = kb.ORDER_COMFIRMATION_KEYBOARD

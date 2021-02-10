@@ -30,7 +30,7 @@ def rich_message_consctructor(category: str) -> dict:
                     "Columns": 6,
                     "Rows": 6,
                     "ActionType": "reply",
-                    "ActionBody": f"order-{item[1]}",
+                    "ActionBody": f"order_{item[1]}_{item[2]}",
                     "Image": item[0],
                     "Text": item[1],
                     "TextOpacity": 0,
@@ -79,7 +79,7 @@ def keyboard_delete(data):
                 "BgColor": "#97be2f",
                 "BgLoop": True,
                 "ActionType": "reply",
-                "ActionBody": f"delete-{item}",
+                "ActionBody": f"delete_{item}",
                 "ReplyType": "message",
                 "Text": '✖️ ' + item
         } for item in data]
@@ -108,6 +108,3 @@ def keyboard_delete(data):
         }
     keyboard['Buttons'].append(MENU_BUTTON)
     return keyboard
-
-if __name__ == '__main__':
-    print(load_images_from_folder('resources/images/combo'))
