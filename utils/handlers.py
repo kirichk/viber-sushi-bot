@@ -123,7 +123,7 @@ def user_message_handler(viber, viber_request):
                 tracking_data['order'].append((ordered_item, item_price))
             else:
                 tracking_data['order'] = [(ordered_item, item_price)]
-            invoice = [f'{x[0]} - {x[1]} грн.' for x in tracking_data['order']]
+            invoice = [f'{· x[0]} - {x[1]} грн.' for x in tracking_data['order']]
             reply_text = f'Вы выбрали:\n{"\n".join(invoice)}\n\n'\
                 'Если желаете выбрать что-нибудь еще, нажмите Меню. '\
                 'Для продолжения, нажмите Оформить заказ.'
