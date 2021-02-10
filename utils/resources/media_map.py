@@ -38,9 +38,9 @@ MEDIA_MAP = {
     'nuggets': [
         [
             ('https://i.imgur.com/rBFZb7J.jpg', 'Наггетсы с чесночным соусом', '95'),
-            ('https://i.imgur.com/03KFkOK.jpg', 'Стрипсы из куриного филе с чесночным соусом', '95'),
+            ('https://i.imgur.com/1oCVNFR.jpg', 'Стрипсы из куриного филе с чесночным соусом', '95'),
             ('https://i.imgur.com/OxiJq2m.jpg', 'Крылышки BBQ чесночным соусом', '95'),
-            ('https://i.imgur.com/PZN78KM.jpg', 'Острые крылышки "Пири-пири" с чесночным соусом', '95'),
+            ('https://i.imgur.com/PHVPTND.jpg', 'Острые крылышки "Пири-пири" с чесночным соусом', '95'),
         ]
     ],
     'pizza': [
@@ -69,7 +69,7 @@ MEDIA_MAP = {
             ('https://i.imgur.com/Gi5IonL.jpg', 'Ролл "Филадельфия"', '129'),
             ('https://i.imgur.com/g4wIqRz.jpg', 'Ролл "Филадельфия" Double Cheese', '139'),
             ('https://i.imgur.com/5kMeLDI.jpg', 'Ролл "Калифорния" с креветкой', '154'),
-            ('https://i.imgur.com/jQGJ7rw.jpg', 'Ролл "Калифорния" с тунцом', '138'),
+            ('https://i.imgur.com/EwVBhck.jpg', 'Ролл "Калифорния" с тунцом', '138'),
             ('https://i.imgur.com/YBW8wfL.jpg', 'Ролл "Калифорния" с лососем', '132'),
             ('https://i.imgur.com/sqk3dLd.jpg', 'Ролл "Калифорния" с угрем', '123'),
         ],
@@ -78,29 +78,29 @@ MEDIA_MAP = {
             ('https://i.imgur.com/v1VK1tL.jpg', 'Ролл "Зелёный дракон"', '141'),
             ('https://i.imgur.com/RYSW6uv.jpg', 'Ролл "Тигр"', '154'),
             ('https://i.imgur.com/RntXub6.jpg', 'Ролл "Канада"', '239'),
-            ('https://i.imgur.com/qMVJ3ZB.jpg', 'Ролл "Футомаки" с тартаром из тунца', '109'),
+            ('https://i.imgur.com/UBdy5Ef.jpg', 'Ролл "Футомаки" с тартаром из тунца', '109'),
             ('https://i.imgur.com/G87goNT.jpg', 'Ролл "Футомаки" с тартаром из лосося', '109'),
         ],
         [
             ('https://i.imgur.com/isHuYlR.jpg', 'Ролл "Филадельфия" с угрем', '138'),
             ('https://i.imgur.com/KdSFg0b.jpg', 'Ролл "Футомаки" с лососем', '89'),
-            ('https://i.imgur.com/AAJTvhv.jpg', 'Ролл "Футомаки" с копчёным лососем', '116'),
-            ('https://i.imgur.com/hxrtPAE.jpg', 'Ролл "Филадельфия" с масляной', '131'),
-            ('https://i.imgur.com/98lUDNR.jpg', 'Ролл "Урамаки" с масляной', '114'),
-            ('https://i.imgur.com/3KxzPSn.jpg', 'Запечённый ролл с лососем', '99'),
+            ('https://i.imgur.com/IptrxEn.jpg', 'Ролл "Футомаки" с копчёным лососем', '116'),
+            ('https://i.imgur.com/d8QB71b.jpg', 'Ролл "Филадельфия" с масляной', '131'),
+            ('https://i.imgur.com/wrRz2y2.jpg', 'Ролл "Урамаки" с масляной', '114'),
+            ('https://i.imgur.com/ZN1QCQx.jpg', 'Запечённый ролл с лососем', '99'),
         ],
         [
             ('https://i.imgur.com/iltkfhR.jpg', 'Запечённый ролл в кунжуте', '81'),
             ('https://i.imgur.com/Fzp5ZAd.jpg', 'Ролл "Аляска"', '84'),
-            ('https://i.imgur.com/huShNom.jpg', 'Маки ролл с угрём', '80'),
-            ('https://i.imgur.com/gPzcNIc.jpg', 'Маки ролл с тунцом', '68'),
-            ('https://i.imgur.com/HG514NR.jpg', 'Маки ролл с лососем', '69'),
-            ('https://i.imgur.com/MQiRRn4.jpg', 'Маки ролл с огурцом', '35'),
+            ('https://i.imgur.com/hhYUPkQ.jpg', 'Маки ролл с угрём', '80'),
+            ('https://i.imgur.com/rU09s86.jpg', 'Маки ролл с тунцом', '68'),
+            ('https://i.imgur.com/lxzf8qz.jpg', 'Маки ролл с лососем', '69'),
+            ('https://i.imgur.com/tHpQZoE.jpg', 'Маки ролл с огурцом', '35'),
         ],
         [
-            ('https://i.imgur.com/oFxcKJn.jpg', 'Ролл "Икура"', '112'),
-            ('https://i.imgur.com/tKMcoMO.jpg', 'Спринг-ролл с тигровой креветкой', '125'),
-            ('https://i.imgur.com/jUvuk9R.jpg', 'Спринг-ролл с лососем', '125'),
+            ('https://i.imgur.com/g0BRlx0.jpg', 'Ролл "Икура"', '112'),
+            ('https://i.imgur.com/kvEIkh7.jpg', 'Спринг-ролл с тигровой креветкой', '125'),
+            ('https://i.imgur.com/XK1fVyF.jpg', 'Спринг-ролл с лососем', '125'),
             # ('https://i.imgur.com/chnOEcr.jpg', 'Ролл "Филадельфия Икура"','147'),
             # ('https://i.imgur.com/KHQWSgx.jpg', 'Ролл "Филадельфия" с манго', '133'),
             # ('https://i.imgur.com/2FgWeQg.jpg', 'Ролл спайси-масляная', '121'),
@@ -161,7 +161,7 @@ MEDIA_MAP = {
         ],
         [
             ('https://i.imgur.com/oRczoK6.jpg', 'Суши с тигровой креветкой', '30'),
-            ('https://i.imgur.com/N99fK8h.jpg', 'Салат "Чука"', '100'),
+            ('https://i.imgur.com/TBMjsGj.jpg', 'Салат "Чука"', '100'),
         ]
     ]
 
