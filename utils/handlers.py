@@ -126,11 +126,13 @@ def user_message_handler(viber, viber_request):
                 tracking_data['order'].append((ordered_item, item_price))
             else:
                 tracking_data['order'] = [(ordered_item, item_price)]
-            invoice = [u"\u2022" + f'{  x[0]} - {x[1]} грн.' for x in tracking_data['order']]
+            total_price = sum([int(x[1]) for x in tracking_data['order']])
+            invoice = [u"\u2022" + f' {x[0]} - {x[1]} грн.' for x in tracking_data['order']]
             bslash = '\n'
-            reply_text = f'Вы выбрали:\n{bslash.join(invoice)}\n\n'\
-                'Если желаете выбрать что-нибудь еще, нажмите Меню. '\
-                'Для продолжения, нажмите Оформить заказ.'
+            reply_text = f'Вы выбрали:\n{bslash.join(invoice)}\n'\
+                         f'Всего - {total_price} грн.\n\n'\
+                         'Если желаете выбрать что-нибудь еще, нажмите Меню. '\
+                         'Для продолжения, нажмите Оформить заказ.'
             reply_keyboard = kb.ORDER_COMFIRMATION_KEYBOARD
         elif text == 'send_order':
             # Final step, sends all info to manager and resets tracking_data
