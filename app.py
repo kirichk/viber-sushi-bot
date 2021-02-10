@@ -42,6 +42,7 @@ def viber_signature_verifier():
 @app.route('/', methods=['POST'])
 def incoming():
     """Catching all requests to bot and defining the request type."""
+    create_table()
     viber_request = viber.parse_request(request.get_data())
     # Defining type of the request and replying to it
     if isinstance(viber_request, ViberMessageRequest):
@@ -68,6 +69,5 @@ def incoming():
 
 
 if __name__ == '__main__':
-    create_table()
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
