@@ -47,10 +47,10 @@ def user_message_handler(viber, viber_request):
         reply_keyboard = kb.MENU_KEYBOARD
         reply_text = 'Спасибо! Выберите интересующую Вас категорию.'
         #####
-        user_data = f'{viber_request.sender.id} - {message.contact.phone_number}'
-        feedback = TextMessage(text=user_data)
-        for admin in ADMINS:
-            viber.send_messages(admin, feedback)
+        # user_data = f'{viber_request.sender.id} - {message.contact.phone_number}'
+        # feedback = TextMessage(text=user_data)
+        # for admin in ADMINS:
+        #     viber.send_messages(admin, feedback)
         #####
     elif isinstance(message, LocationMessage):
         # Handling reply after a user shared his location and transcribing it
