@@ -57,7 +57,7 @@ def keyboard_consctructor(items: list) -> dict:
         "Buttons": [{
                 "Columns": 3,
                 "Rows": 1,
-                "BgColor": "#e6f5ff",
+                "BgColor": "#97be2f",
                 "BgLoop": True,
                 "ActionType": "reply",
                 "ActionBody": item[0],
@@ -76,7 +76,7 @@ def keyboard_delete(data):
         "Buttons": [{
                 "Columns": 3,
                 "Rows": 1,
-                "BgColor": "#e6f5ff",
+                "BgColor": "#97be2f",
                 "BgLoop": True,
                 "ActionType": "reply",
                 "ActionBody": f"delete-{item}",
@@ -88,7 +88,7 @@ def keyboard_delete(data):
         MENU_BUTTON = {
             "Columns": 6,
             "Rows": 1,
-            "BgColor": "#6b90ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "menu",
@@ -99,7 +99,7 @@ def keyboard_delete(data):
         MENU_BUTTON = {
             "Columns": 3,
             "Rows": 1,
-            "BgColor": "#6b90ff",
+            "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
             "ActionBody": "menu",
