@@ -2,10 +2,10 @@ MEDIA_MAP = {
     'combo': [
         [
             ('https://i.imgur.com/bcqkviS.jpg', 'Комбо 1', '319'),
-            ('https://i.imgur.com/wNVvfa4.jpg', 'Комбо 2', '299'),
-            ('https://i.imgur.com/n1zVjo1.jpg', 'Комбо 3', '309'),
-            ('https://i.imgur.com/ZNG5zFW.jpg', 'Комбо 4', '459'),
-            ('https://i.imgur.com/AxY04Nv.jpg', 'Комбо 5', '229'),
+            ('https://i.imgur.com/oKWfQXQ.jpg', 'Комбо 2', '299'),
+            ('https://i.imgur.com/Vjreufs.jpg', 'Комбо 3', '309'),
+            ('https://i.imgur.com/tD4Cwvy.jpg', 'Комбо 4', '459'),
+            ('https://i.imgur.com/Fmpp7aR.jpg', 'Комбо 5', '229'),
         ]
     ],
     'drinks': [
@@ -17,15 +17,15 @@ MEDIA_MAP = {
     ],
     'guncans': [
         [
-            ('https://i.imgur.com/S7LeOjA.jpg', 'Гункан с лососем спайси', '35'),
-            ('https://i.imgur.com/7LVMeZZ.jpg', 'Гункан с лососем и копчёным кальмаром спайси', '35'),
+            ('https://i.imgur.com/lwNOUFz.jpg', 'Гункан с лососем спайси', '35'),
+            ('https://i.imgur.com/GHXdRVx.jpg', 'Гункан с лососем и копчёным кальмаром спайси', '35'),
             ('https://i.imgur.com/Zybwxlh.jpg', 'Гункан с копчёным лососем спайси', '35'),
             ('https://i.imgur.com/46RUOqz.jpg', 'Гункан с креветкой спайси', '35'),
             ('https://i.imgur.com/pTC1iAT.jpg', 'Гункан масляная спайси', '35'),
-            ('https://i.imgur.com/k1cc7MO.jpg', 'Гункан с чукой и кунжутным соусом', '20'),
+            ('https://i.imgur.com/N57Fnsq.jpg', 'Гункан с чукой и кунжутным соусом', '20'),
         ],
         [
-            ('https://i.imgur.com/bj1E6a4.jpg', 'Гункан со снежным крабом спайси', '25'),
+            ('https://i.imgur.com/Zt3oP3A.jpg', 'Гункан со снежным крабом спайси', '25'),
             ('https://i.imgur.com/aZjjoWt.jpg', 'Гункан Икура', '40'),
         ]
     ],
@@ -91,7 +91,7 @@ MEDIA_MAP = {
         ],
         [
             ('https://i.imgur.com/iltkfhR.jpg', 'Запечённый ролл в кунжуте', '81'),
-            ('https://i.imgur.com/Fzp5ZAd.jpg', 'Ролл "Аляска"', '84'),
+            ('https://i.imgur.com/EkhKKAv.jpg', 'Ролл "Аляска"', '84'),
             ('https://i.imgur.com/hhYUPkQ.jpg', 'Маки ролл с угрём', '80'),
             ('https://i.imgur.com/rU09s86.jpg', 'Маки ролл с тунцом', '68'),
             ('https://i.imgur.com/lxzf8qz.jpg', 'Маки ролл с лососем', '69'),
