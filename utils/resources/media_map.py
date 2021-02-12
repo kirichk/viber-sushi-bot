@@ -43,6 +43,22 @@ MEDIA_MAP = {
             ('https://i.imgur.com/PHVPTND.jpg', 'Острые крылышки "Пири-пири" с чесночным соусом', '95'),
         ]
     ],
+    'noodles': [
+        [
+            ('https://i.imgur.com/rBFZb7J.jpg', 'Наггетсы с чесночным соусом', '95'),
+            ('https://i.imgur.com/1oCVNFR.jpg', 'Стрипсы из куриного филе с чесночным соусом', '95'),
+            ('https://i.imgur.com/OxiJq2m.jpg', 'Крылышки BBQ чесночным соусом', '95'),
+            ('https://i.imgur.com/PHVPTND.jpg', 'Острые крылышки "Пири-пири" с чесночным соусом', '95'),
+        ]
+    ],
+    'shrimps': [
+        [
+            ('https://i.imgur.com/rBFZb7J.jpg', 'Наггетсы с чесночным соусом', '95'),
+            ('https://i.imgur.com/1oCVNFR.jpg', 'Стрипсы из куриного филе с чесночным соусом', '95'),
+            ('https://i.imgur.com/OxiJq2m.jpg', 'Крылышки BBQ чесночным соусом', '95'),
+            ('https://i.imgur.com/PHVPTND.jpg', 'Острые крылышки "Пири-пири" с чесночным соусом', '95'),
+        ]
+    ],
     'pizza': [
         [
             ('https://i.imgur.com/6A3vDTq.jpg', 'Пицца "Диабло"', '139'),
@@ -148,7 +164,10 @@ MEDIA_MAP = {
             ('https://i.imgur.com/bGkKcAC.jpg', 'Сет Экзотический', '399'),
             ('https://i.imgur.com/5fQh32p.jpg', 'Сет Филадельфия', '399'),
             ('https://i.imgur.com/0Gkug4Q.jpg', 'Сет Sakura', '429'),
-        ]
+        ],
+        [
+           ('https://i.imgur.com/3Yhy5Tc.jpg', 'Сет Запечённый', '299'),
+        ],
     ],
     'sushi': [
         [

@@ -23,7 +23,9 @@ PIZZA_SNACKS_MENU = [
     ('pizza', 'Пицца'),
     ('combo', 'Комбо'),
     ('nuggets_wings', 'Наггетсы и Крылышки'),
-    ('mussils', 'Мидии')
+    ('mussils', 'Мидии'),
+    ('noodles', 'Лапша'),
+    ('shrimps', 'Креветки')
 ]
 
 OTHER_MENU = [
