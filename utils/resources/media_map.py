@@ -32,7 +32,7 @@ MEDIA_MAP = {
     'mussils': [
         [
             ('https://i.imgur.com/HrAdhnu.jpg', 'Запечённые мидии под соусом спайси', '115'),
-            ('https://i.imgur.com/Iv6ntJB.jpg', 'Запечённые мидии в ракушке под сыром моцарелла', '125'),
+            ('https://i.imgur.com/EkXDY4P.jpg', 'Запечённые мидии в ракушке под сыром моцарелла', '125'),
         ]
     ],
     'nuggets': [
@@ -45,18 +45,22 @@ MEDIA_MAP = {
     ],
     'noodles': [
         [
-            ('https://i.imgur.com/rBFZb7J.jpg', 'Наггетсы с чесночным соусом', '95'),
-            ('https://i.imgur.com/1oCVNFR.jpg', 'Стрипсы из куриного филе с чесночным соусом', '95'),
-            ('https://i.imgur.com/OxiJq2m.jpg', 'Крылышки BBQ чесночным соусом', '95'),
-            ('https://i.imgur.com/PHVPTND.jpg', 'Острые крылышки "Пири-пири" с чесночным соусом', '95'),
+
+            ('https://i.imgur.com/KU5AmJd.jpg', 'Харусаме с курицей терияки', '90'),
+            ('https://i.imgur.com/t2LtFSU.jpg', 'Харусаме с курицей под устричным соусом', '92'),
+            ('https://i.imgur.com/5OAC15A.jpg', 'Харусаме с лососем и тигровыми креветками под устричным соусом', '159'),
+            ('https://i.imgur.com/LLeLdiP.jpg', 'Харусаме с курицей под кисло-сладким соусом', '88'),
+            ('https://i.imgur.com/dmNoZ7h.jpg', 'Удон с морепродуктами под устричным соусом', '119'),
+            ('https://i.imgur.com/45n43bq.jpg', 'Удон с курицей в кисло-сладком соусе', '86'),
+        ],
+        [
+            ('https://i.imgur.com/TBMjsGj.jpg', 'Салат "Чука"', '100'),
         ]
     ],
     'shrimps': [
         [
-            ('https://i.imgur.com/rBFZb7J.jpg', 'Наггетсы с чесночным соусом', '95'),
-            ('https://i.imgur.com/1oCVNFR.jpg', 'Стрипсы из куриного филе с чесночным соусом', '95'),
-            ('https://i.imgur.com/OxiJq2m.jpg', 'Крылышки BBQ чесночным соусом', '95'),
-            ('https://i.imgur.com/PHVPTND.jpg', 'Острые крылышки "Пири-пири" с чесночным соусом', '95'),
+            ('https://i.imgur.com/SQOb6hn.jpg', 'Тигровая креветка в кляре', '146'),
+            ('https://i.imgur.com/bCvRJA2.jpg', 'Тигровая креветка темпура под сладко-острым соусом васаби', '149'),
         ]
     ],
     'pizza': [
@@ -82,31 +86,31 @@ MEDIA_MAP = {
     ],
     'rolls': [
         [
-            ('https://i.imgur.com/Gi5IonL.jpg', 'Ролл "Филадельфия"', '129'),
+            ('https://i.imgur.com/3TJHWaX.jpg', 'Ролл "Филадельфия"', '129'),
             ('https://i.imgur.com/g4wIqRz.jpg', 'Ролл "Филадельфия" Double Cheese', '139'),
-            ('https://i.imgur.com/5kMeLDI.jpg', 'Ролл "Калифорния" с креветкой', '154'),
+            ('https://i.imgur.com/KPhLPxn.jpg', 'Ролл "Калифорния" с креветкой', '154'),
             ('https://i.imgur.com/EwVBhck.jpg', 'Ролл "Калифорния" с тунцом', '138'),
-            ('https://i.imgur.com/YBW8wfL.jpg', 'Ролл "Калифорния" с лососем', '132'),
-            ('https://i.imgur.com/sqk3dLd.jpg', 'Ролл "Калифорния" с угрем', '123'),
+            ('https://i.imgur.com/U29wjsm.jpg', 'Ролл "Калифорния" с лососем', '132'),
+            ('https://i.imgur.com/12AFjia.jpg', 'Ролл "Калифорния" с угрем', '123'),
         ],
         [
-            ('https://i.imgur.com/K488mWw.jpg', 'Ролл "Туна"', '156'),
-            ('https://i.imgur.com/v1VK1tL.jpg', 'Ролл "Зелёный дракон"', '141'),
-            ('https://i.imgur.com/RYSW6uv.jpg', 'Ролл "Тигр"', '154'),
-            ('https://i.imgur.com/RntXub6.jpg', 'Ролл "Канада"', '239'),
+            ('https://i.imgur.com/beNGEI4.jpg', 'Ролл "Туна"', '156'),
+            ('https://i.imgur.com/KJBEjIl.jpg', 'Ролл "Зелёный дракон"', '141'),
+            ('https://i.imgur.com/6r7ymCp.jpg', 'Ролл "Тигр"', '154'),
+            ('https://i.imgur.com/75MnDS7.jpg', 'Ролл "Канада"', '239'),
             ('https://i.imgur.com/UBdy5Ef.jpg', 'Ролл "Футомаки" с тартаром из тунца', '109'),
-            ('https://i.imgur.com/G87goNT.jpg', 'Ролл "Футомаки" с тартаром из лосося', '109'),
+            ('https://i.imgur.com/SUczjkD.jpg', 'Ролл "Футомаки" с тартаром из лосося', '109'),
         ],
         [
-            ('https://i.imgur.com/isHuYlR.jpg', 'Ролл "Филадельфия" с угрем', '138'),
-            ('https://i.imgur.com/KdSFg0b.jpg', 'Ролл "Футомаки" с лососем', '89'),
+            ('https://i.imgur.com/R3ShstX.jpg', 'Ролл "Филадельфия" с угрем', '138'),
+            ('https://i.imgur.com/02pmn9p.jpg', 'Ролл "Футомаки" с лососем', '89'),
             ('https://i.imgur.com/IptrxEn.jpg', 'Ролл "Футомаки" с копчёным лососем', '116'),
             ('https://i.imgur.com/d8QB71b.jpg', 'Ролл "Филадельфия" с масляной', '131'),
             ('https://i.imgur.com/wrRz2y2.jpg', 'Ролл "Урамаки" с масляной', '114'),
             ('https://i.imgur.com/ZN1QCQx.jpg', 'Запечённый ролл с лососем', '99'),
         ],
         [
-            ('https://i.imgur.com/iltkfhR.jpg', 'Запечённый ролл в кунжуте', '81'),
+            ('https://i.imgur.com/trA7uad.jpg', 'Запечённый ролл в кунжуте', '81'),
             ('https://i.imgur.com/EkhKKAv.jpg', 'Ролл "Аляска"', '84'),
             ('https://i.imgur.com/hhYUPkQ.jpg', 'Маки ролл с угрём', '80'),
             ('https://i.imgur.com/rU09s86.jpg', 'Маки ролл с тунцом', '68'),
@@ -118,8 +122,8 @@ MEDIA_MAP = {
             ('https://i.imgur.com/kvEIkh7.jpg', 'Спринг-ролл с тигровой креветкой', '125'),
             ('https://i.imgur.com/XK1fVyF.jpg', 'Спринг-ролл с лососем', '125'),
             # ('https://i.imgur.com/chnOEcr.jpg', 'Ролл "Филадельфия Икура"','147'),
-            # ('https://i.imgur.com/KHQWSgx.jpg', 'Ролл "Филадельфия" с манго', '133'),
-            # ('https://i.imgur.com/2FgWeQg.jpg', 'Ролл спайси-масляная', '121'),
+            ('https://i.imgur.com/cF1dDgm.jpg', 'Ролл "Филадельфия" с манго', '133'),
+            ('https://i.imgur.com/RgloXcr.jpg', 'Ролл спайси-масляная', '121'),
         ]
     ],
     'sauces': [
@@ -143,30 +147,30 @@ MEDIA_MAP = {
     'sets': [
         [
             ('https://i.imgur.com/oX9MAQO.jpg', 'Сет Вегетарианский', '199'),
-            ('https://i.imgur.com/2QocksH.jpg', 'Сет Фирменный', '439'),
-            ('https://i.imgur.com/vb1ns8y.jpg', 'Сет Филадельфия NEW', '449'),
+            ('https://i.imgur.com/gvbVqcX.jpg', 'Сет Фирменный', '439'),
+            ('https://i.imgur.com/ngnGePw.jpg', 'Сет Филадельфия NEW', '449'),
             ('https://i.imgur.com/baqGcME.jpg', 'Сет Лососевый бум', '449'),
-            ('https://i.imgur.com/XRa8veQ.jpg', 'Сет Филадельфия Lux', '499'),
-            ('https://i.imgur.com/0J22tOR.jpg', 'Сет Кунсей', '499'),
+            ('https://i.imgur.com/vUYbmsN.jpg', 'Сет Филадельфия Lux', '499'),
+            ('https://i.imgur.com/U8DYOt8.jpg', 'Сет Кунсей', '499'),
         ],
         [
-            ('https://i.imgur.com/H4XT4LF.jpg', 'Сет Mix вкусов', '569'),
-            ('https://i.imgur.com/Uu00g1r.jpg', 'Сет Гурман', '599'),
+            ('https://i.imgur.com/iiXOYTw.jpg', 'Сет Mix вкусов', '569'),
+            ('https://i.imgur.com/g2kkB1Z.jpg', 'Сет Гурман', '599'),
             ('https://i.imgur.com/Z5g1ke5.jpg', 'Сет Королевский', '599'),
             ('https://i.imgur.com/T6cNUz9.jpg', 'Сет Для компании', '959'),
             ('https://i.imgur.com/TwPwhXE.jpg', 'Сет Маки', '249'),
             ('https://i.imgur.com/ABw1blo.jpg', 'Сет Океанический NEW', '289'),
         ],
         [
-            ('https://i.imgur.com/3Yhy5Tc.jpg', 'Сет Запечённый', '299'),
+            ('https://i.imgur.com/LfsfRRV.jpg', 'Сет Запечённый', '299'),
             ('https://i.imgur.com/d0Ix0uQ.jpg', 'Сет Классический NEW', '319'),
             ('https://i.imgur.com/WKqkwk9.jpg', 'Сет Smile', '349'),
-            ('https://i.imgur.com/bGkKcAC.jpg', 'Сет Экзотический', '399'),
+            ('https://i.imgur.com/3V86CP0.jpg', 'Сет Экзотический', '399'),
             ('https://i.imgur.com/5fQh32p.jpg', 'Сет Филадельфия', '399'),
             ('https://i.imgur.com/0Gkug4Q.jpg', 'Сет Sakura', '429'),
         ],
         [
-           ('https://i.imgur.com/3Yhy5Tc.jpg', 'Сет Запечённый', '299'),
+            ('https://i.imgur.com/0bCbpPI.jpg', 'Сет Романтический', '499'),
         ],
     ],
     'sushi': [
@@ -180,7 +184,6 @@ MEDIA_MAP = {
         ],
         [
             ('https://i.imgur.com/oRczoK6.jpg', 'Суши с тигровой креветкой', '30'),
-            ('https://i.imgur.com/TBMjsGj.jpg', 'Салат "Чука"', '100'),
         ]
     ]
 
