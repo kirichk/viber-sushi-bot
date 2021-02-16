@@ -31,7 +31,7 @@ MEDIA_MAP = {
     ],
     'mussils': [
         [
-            ('https://i.imgur.com/HrAdhnu.jpg', 'Запечённые мидии под соусом спайси', '115'),
+            ('https://i.imgur.com/Z81kxGg.jpg', 'Запечённые мидии под соусом спайси', '125'),
             ('https://i.imgur.com/EkXDY4P.jpg', 'Запечённые мидии в ракушке под сыром моцарелла', '125'),
         ]
     ],
@@ -121,9 +121,9 @@ MEDIA_MAP = {
             ('https://i.imgur.com/g0BRlx0.jpg', 'Ролл "Икура"', '112'),
             ('https://i.imgur.com/kvEIkh7.jpg', 'Спринг-ролл с тигровой креветкой', '125'),
             ('https://i.imgur.com/XK1fVyF.jpg', 'Спринг-ролл с лососем', '125'),
-            # ('https://i.imgur.com/chnOEcr.jpg', 'Ролл "Филадельфия Икура"','147'),
-            ('https://i.imgur.com/cF1dDgm.jpg', 'Ролл "Филадельфия" с манго', '133'),
-            ('https://i.imgur.com/RgloXcr.jpg', 'Ролл спайси-масляная', '121'),
+            ('https://i.imgur.com/5b552N8.jpg', 'Ролл "Филадельфия Икура"','147'),
+            ('https://i.imgur.com/IHb78Ex.jpg', 'Ролл "Филадельфия" с манго', '133'),
+            ('https://i.imgur.com/bQpb8B5.jpg', 'Ролл спайси-масляная', '121'),
         ]
     ],
     'sauces': [

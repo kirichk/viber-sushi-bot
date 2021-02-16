@@ -32,7 +32,7 @@ OTHER_MENU = [
     ('sauces', 'Соусы'),
     ('drinks', 'Напитки'),
     ('offers', 'Акции'),
-    ('delivery', 'Доставка')
+    ('delivery', 'Доставка и контакты')
 ]
 
 SHARE_PHONE_KEYBOARD = {
