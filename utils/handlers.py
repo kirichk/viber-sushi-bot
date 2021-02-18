@@ -112,8 +112,8 @@ def user_message_handler(viber, viber_request):
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[0])
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
         elif text == 'address':
-            if int(viber_request.api_version) < 10:
-                print(viber_request.api_version)
+            if int(viber_request.sender.api_version) < 10:
+                print(viber_request.sender.api_version)
                 reply_text = 'Напишите адрес доставки в ответе на это сообщение.'
                 reply_keyboard = kb.GO_TO_MENU_KEYBOARD
                 tracking_data['address_mode'] = 'on'
