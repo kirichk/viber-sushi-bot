@@ -45,6 +45,6 @@ KEYBOARD_RESPONSE_MAP = {
                  kb.GO_TO_MENU_KEYBOARD],
     'menu': ['Выберите интересующую Вас категорию.',
              kb.MENU_KEYBOARD],
-    'confirmation': ['Выберите желаемый способ забрать заказ.',
+    'confirmation': ['Выберите желаемый способ забрать заказ. Приём заказов с 10:00-21:00.',
                      kb.DELIVERY_TYPE_KEYBOARD]
 }
