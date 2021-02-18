@@ -119,7 +119,7 @@ def user_message_handler(viber, viber_request):
             else:
                 reply_text = 'Укажите адрес доставки заказа. '\
                                  'Для этого нажмите Отправить Локацию.'
-                reply_keyboard = kb.SHARE_LOCATION_KEYBOARD]
+                reply_keyboard = kb.SHARE_LOCATION_KEYBOARD
         elif text == 'pickup':
             tracking_data['location'] = 'Самовывоз'
             reply_text = 'Нажмите кнопку "добавить комментарий" для того чтобы указать дату и время'
