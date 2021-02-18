@@ -45,9 +45,6 @@ KEYBOARD_RESPONSE_MAP = {
                  kb.GO_TO_MENU_KEYBOARD],
     'menu': ['Выберите интересующую Вас категорию.',
              kb.MENU_KEYBOARD],
-    'address': ['Укажите адрес доставки заказа. '\
-                     'Для этого нажмите Отправить Локацию.',
-                     kb.SHARE_LOCATION_KEYBOARD],
     'confirmation': ['Выберите желаемый способ забрать заказ.',
                      kb.DELIVERY_TYPE_KEYBOARD]
 }
