@@ -26,7 +26,6 @@ logger.setLevel(os.getenv("LOG_LEVEL"))
 def user_message_handler(viber, viber_request):
     """Receiving a message from user and sending replies."""
     logger.info(viber_request)
-    print(viber_request)
     message = viber_request.message
     tracking_data = message.tracking_data
     # Data for usual TextMessage
@@ -113,7 +112,6 @@ def user_message_handler(viber, viber_request):
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
         elif text == 'address':
             if int(viber_request.sender.api_version) < 10:
-                print(viber_request.sender.api_version)
                 reply_text = 'Напишите адрес доставки в ответе на это сообщение.'
                 reply_keyboard = kb.GO_TO_MENU_KEYBOARD
                 reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
