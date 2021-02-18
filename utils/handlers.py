@@ -58,7 +58,7 @@ def user_message_handler(viber, viber_request):
         tracking_data['location'] = get_address(message.location)
         reply_keyboard = kb.FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD
         reply_text = f"Спасибо! Вы указали:\n{tracking_data['location']}\n\n"\
-                      "В комментариях укажите желаемую дату и время доставки. "\
+                      'Нажмите кнопку "добавить комментарий" для того чтобы указать дату и время.'\
                       "Для подтверждения заказа нажмите Заказать."
     else:
         text = viber_request.message.text
@@ -112,7 +112,7 @@ def user_message_handler(viber, viber_request):
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
         elif text == 'pickup':
             tracking_data['location'] = 'Самовывоз'
-            reply_text = "В комментариях укажите желаемую дату и время самовывоза. Для подтверждения заказа нажмите Заказать."
+            reply_text = 'Нажмите кнопку "добавить комментарий" для того чтобы указать дату и время'
             reply_keyboard = kb.FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD
         elif text == 'comment':
             # Setting the possibility to write a comment
