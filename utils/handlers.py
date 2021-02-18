@@ -25,6 +25,7 @@ logger.setLevel(os.getenv("LOG_LEVEL"))
 
 def user_message_handler(viber, viber_request):
     """Receiving a message from user and sending replies."""
+    logger.info(viber_request)
     message = viber_request.message
     tracking_data = message.tracking_data
     # Data for usual TextMessage
