@@ -37,7 +37,7 @@ def user_message_handler(viber, viber_request):
     reply_rich_media = {}
 
     if tracking_data is None:
-        tracking_data = {'comment_mode': 'off'}
+        tracking_data = {'comment_mode': 'off', 'address_mode': 'off'}
     else:
         tracking_data = json.loads(tracking_data)
 
@@ -111,6 +111,15 @@ def user_message_handler(viber, viber_request):
                 if kb.ORDER_BUTTON[0] in reply_keyboard['Buttons']:
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[0])
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
+        elif text == 'address':
+            if int(viber_request.api_version) < 10:
+                reply_text = 'Напишите адрес доставки в ответе на это сообщение.'
+                reply_keyboard = kb.GO_TO_MENU_KEYBOARD]
+                tracking_data['address_mode'] = 'on'
+            else:
+                reply_text = 'Укажите адрес доставки заказа. '\
+                                 'Для этого нажмите Отправить Локацию.'
+                reply_keyboard = kb.SHARE_LOCATION_KEYBOARD]
         elif text == 'pickup':
             tracking_data['location'] = 'Самовывоз'
             reply_text = 'Нажмите кнопку "добавить комментарий" для того чтобы указать дату и время'
@@ -165,6 +174,12 @@ def user_message_handler(viber, viber_request):
                 reply_text = 'Спасибо! Для подтверждения заказа нажмите '\
                              'Заказать.'
                 reply_keyboard = kb.FINAL_COMFIRMATION_WITHOUT_COMMENT_KEYBOARD
+            elif tracking_data['address_mode'] == 'on':
+                tracking_data['address_mode'] = 'off'
+                tracking_data['location'] = text
+                reply_text = 'Нажмите кнопку "добавить комментарий" для того чтобы указать дату и время.'\
+                             "Для подтверждения заказа нажмите Заказать."
+                reply_keyboard = kb.FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD
             else:
                 reply_text = 'Воспользуйтесь клавиатурой с внопками для '\
                              'управления ботом.'
