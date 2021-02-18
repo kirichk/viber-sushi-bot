@@ -116,6 +116,7 @@ def user_message_handler(viber, viber_request):
                 print(viber_request.sender.api_version)
                 reply_text = 'Напишите адрес доставки в ответе на это сообщение.'
                 reply_keyboard = kb.GO_TO_MENU_KEYBOARD
+                reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
                 tracking_data['address_mode'] = 'on'
             else:
                 reply_text = 'Укажите адрес доставки заказа. '\
