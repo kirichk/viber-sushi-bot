@@ -22,7 +22,7 @@ dotenv_definer()
 app = Flask(__name__)
 viber = Api(BotConfiguration(
     name='SushiPizzaBot',
-    avatar='https://i.imgur.com/x6Qfn61.png',
+    avatar='https://i.ibb.co/WHf2zFz/image-2021-02-12-14-42-41.png',
     auth_token=os.getenv("TOKEN")
 ))
 
