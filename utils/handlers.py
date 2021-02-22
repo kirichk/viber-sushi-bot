@@ -153,7 +153,7 @@ def user_message_handler(viber, viber_request):
             bslash = '\n'
             if tracking_data['name'] is not None:
                 mesage_to_admin += f"Имя: {tracking_data['name']}\n"
-            mesage_to_admin += f"Номер: {tracking_data['phone']}\n"\
+            mesage_to_admin += f"Номер: +{tracking_data['phone']}\n"\
                                f"Заказ:\n{bslash.join(invoice)}\n"\
                                f"Всего: {total_price} грн.\n"\
                                f"Адрес: {tracking_data['location']}\n"
@@ -189,8 +189,7 @@ def user_message_handler(viber, viber_request):
                     reply_keyboard = kb.SHARE_PHONE_KEYBOARD
     if reply_rich_media:
         reply = []
-        reply_text = 'Выберите желаемую позицию из перечня выше. Для '\
-                     'возвращения в меню воспользуйтесь клавиатурой внизу.'
+        reply_text = 'Для выбора нажмите на желаемую позицию из перечня выше.'
         reply_keyboard = kb.GO_TO_MENU_KEYBOARD
         if kb.MENU_BUTTON not in reply_keyboard['Buttons'] and text != 'menu':
             reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
