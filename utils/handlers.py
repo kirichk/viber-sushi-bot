@@ -181,7 +181,7 @@ def user_message_handler(viber, viber_request):
                              "Для подтверждения заказа нажмите Заказать."
                 reply_keyboard = kb.FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD
             else:
-                reply_text = 'Воспользуйтесь клавиатурой с внопками для '\
+                reply_text = 'Воспользуйтесь клавиатурой с кнопками для '\
                              'управления ботом.'
                 if 'phone' in tracking_data:
                     reply_keyboard = kb.MENU_KEYBOARD
