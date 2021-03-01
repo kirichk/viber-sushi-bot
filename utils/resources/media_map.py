@@ -1,7 +1,7 @@
 MEDIA_MAP = {
     'combo': [
         [
-            ['https://i.postimg.cc/prVhs67C/1.jpg', 'Комбо 1', '319'],
+            ['https://i.postimg.cc/Z5k4dyqF/1.jpg', 'Комбо 1', '319'],
             ['https://i.postimg.cc/prVhs67C/2.jpg', 'Комбо 2', '299'],
             ['https://i.postimg.cc/DZP4dTCm/3.jpg', 'Комбо 3', '309'],
             ['https://i.postimg.cc/3wMksRVd/4.jpg', 'Комбо 4', '459'],
