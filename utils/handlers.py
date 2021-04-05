@@ -113,14 +113,14 @@ def user_message_handler(viber, viber_request):
         elif text == 'address':
             reply_text = 'Нажмите кнопку "ДОБАВИТЬ КОММЕНТАРИЙ", чтобы указать адрес, дату и время, на когда желаете заказать.\nИли нажмите кнопку "ЗАКАЗАТЬ", для уточнения с вами свяжется менеджер.'
             reply_keyboard = kb.FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD
+            reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
             # else:
             #     reply_text = 'Укажите адрес доставки заказа. '\
             #                      'Для этого нажмите Отправить Локацию.'
             #     reply_keyboard = kb.SHARE_LOCATION_KEYBOARD
         elif text == 'pickup':
             tracking_data['location'] = 'Самовывоз'
-            reply_text = '''Нажмите кнопку "ДОБАВИТЬ КОММЕНТАРИЙ", чтобы указать, дату и время, когда желаете забрать заказ.
-            Или нажмите кнопку "ЗАКАЗАТЬ", для уточнения с вами свяжется менеджер.'''
+            reply_text = 'Нажмите кнопку "ДОБАВИТЬ КОММЕНТАРИЙ", чтобы указать, дату и время, когда желаете забрать заказ.\nИли нажмите кнопку "ЗАКАЗАТЬ", для уточнения с вами свяжется менеджер.'
             reply_keyboard = kb.FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD
         elif text == 'comment':
             # Setting the possibility to write a comment
