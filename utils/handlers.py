@@ -111,6 +111,7 @@ def user_message_handler(viber, viber_request):
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[0])
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
         elif text == 'address':
+            tracking_data['location'] = 'Доставка'
             reply_text = 'Нажмите кнопку "ДОБАВИТЬ КОММЕНТАРИЙ", чтобы указать адрес, дату и время, на когда желаете заказать.\nИли нажмите кнопку "ЗАКАЗАТЬ", для уточнения с вами свяжется менеджер.'
             reply_keyboard = kb.FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD
             reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
