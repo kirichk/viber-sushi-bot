@@ -110,9 +110,9 @@ ORDER_COMFIRMATION_KEYBOARD = {
             "BgColor": "#97be2f",
             "BgLoop": True,
             "ActionType": "reply",
-            "ActionBody": "menu",
+            "ActionBody": "edit",
             "ReplyType": "message",
-            "Text": "Меню"
+            "Text": "Изменить заказ"
         },
         {
             "Columns": 3,
@@ -123,7 +123,17 @@ ORDER_COMFIRMATION_KEYBOARD = {
             "ActionBody": "confirmation",
             "ReplyType": "message",
             "Text": "Оформить заказ"
-        }
+        },
+        {
+            "Columns": 6,
+            "Rows": 1,
+            "BgColor": "#97be2f",
+            "BgLoop": True,
+            "ActionType": "reply",
+            "ActionBody": "menu",
+            "ReplyType": "message",
+            "Text": "Меню"
+        },
     ]
 }
 
