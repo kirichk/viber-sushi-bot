@@ -6,7 +6,7 @@ MENU_NAMES = [
     ('sets_rolls', 'Сеты и Роллы'),
     ('guncans_sushi', 'Гунканы и Суши'),
     ('pizza_snacks', 'Пицца и Закуски'),
-    ('other', 'Ещё')
+    ('other', 'Дополнительно')
 ]
 
 SETS_ROLLS_MENU = [
@@ -20,16 +20,16 @@ GUNCANS_SUSHI_MENU = [
 ]
 
 PIZZA_SNACKS_MENU = [
-    ('pizza', 'Пицца'),
+    ('pizza', 'Пицца с сырным бортиком'),
     ('combo', 'Комбо'),
-    ('nuggets_wings', 'Наггетсы и Крылышки'),
+    ('nuggets_wings', 'Фри-меню'),
     ('mussils', 'Мидии'),
-    ('noodles', 'Лапша'),
+    ('noodles', 'WOK'),
     ('shrimps', 'Креветки')
 ]
 
 OTHER_MENU = [
-    ('sauces', 'Соусы'),
+    ('sauces', 'Соусы и комплектующие'),
     ('drinks', 'Напитки'),
     ('offers', 'Акции'),
     ('delivery', 'Доставка и контакты')
@@ -189,7 +189,7 @@ ORDER_BUTTON = [
             "ActionType": "reply",
             "ActionBody": "edit",
             "ReplyType": "message",
-            "Text": "Изменить заказ"
+            "Text": "Отменить выбранную позицию"
         },
         {
             "Columns": 3,

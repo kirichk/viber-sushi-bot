@@ -21,8 +21,8 @@ dotenv_definer()
 
 app = Flask(__name__)
 viber = Api(BotConfiguration(
-    name='FreshRolls',
-    avatar='https://i.ibb.co/WHf2zFz/image-2021-02-12-14-42-41.png',
+    name='FRESHROLLSbot',
+    avatar='https://i.ibb.co/SPXsFsp/image.jpg',
     auth_token=os.getenv("TOKEN")
 ))
 

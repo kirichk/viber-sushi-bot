@@ -111,23 +111,24 @@ def user_message_handler(viber, viber_request):
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[0])
                     reply_keyboard['Buttons'].remove(kb.ORDER_BUTTON[1])
         elif text == 'address':
-            if int(viber_request.sender.api_version) < 10:
-                reply_text = 'Напишите адрес доставки в ответе на это сообщение.'
-                reply_keyboard = kb.GO_TO_MENU_KEYBOARD
-                reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
-                tracking_data['address_mode'] = 'on'
-            else:
-                reply_text = 'Укажите адрес доставки заказа. '\
-                                 'Для этого нажмите Отправить Локацию.'
-                reply_keyboard = kb.SHARE_LOCATION_KEYBOARD
+            reply_text = '''Нажмите кнопку "ДОБАВИТЬ КОММЕНТАРИЙ", чтобы указать адрес, дату и время, на когда желаете заказать.
+            Или нажмите кнопку "ЗАКАЗАТЬ", для уточнения с вами свяжется менеджер.'''
+            reply_keyboard = kb.GO_TO_MENU_KEYBOARD
+            reply_keyboard['Buttons'].append(kb.MENU_BUTTON)
+            tracking_data['address_mode'] = 'on'
+            # else:
+            #     reply_text = 'Укажите адрес доставки заказа. '\
+            #                      'Для этого нажмите Отправить Локацию.'
+            #     reply_keyboard = kb.SHARE_LOCATION_KEYBOARD
         elif text == 'pickup':
             tracking_data['location'] = 'Самовывоз'
-            reply_text = 'Нажмите кнопку "добавить комментарий" для того чтобы указать дату и время'
+            reply_text = '''Нажмите кнопку "ДОБАВИТЬ КОММЕНТАРИЙ", чтобы указать, дату и время, когда желаете забрать заказ.
+            Или нажмите кнопку "ЗАКАЗАТЬ", для уточнения с вами свяжется менеджер.'''
             reply_keyboard = kb.FINAL_COMFIRMATION_WITH_COMMENT_KEYBOARD
         elif text == 'comment':
             # Setting the possibility to write a comment
             tracking_data['comment_mode'] = 'on'
-            reply_text = 'Напишите Ваши пожелания в ответ на это сообщение.'
+            reply_text = 'Укажите адрес (если доставка), дату и время, а также другие пожелания к заказу.'
         elif text[:5] == 'order':
             # Handling user selection of product, and dislpaying his choice
             ordered_item = text.split('_')[1]
