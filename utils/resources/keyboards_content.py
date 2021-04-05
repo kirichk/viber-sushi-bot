@@ -112,7 +112,7 @@ ORDER_COMFIRMATION_KEYBOARD = {
             "ActionType": "reply",
             "ActionBody": "edit",
             "ReplyType": "message",
-            "Text": "Изменить заказ"
+            "Text": "Отменить выбранную позицию"
         },
         {
             "Columns": 3,
